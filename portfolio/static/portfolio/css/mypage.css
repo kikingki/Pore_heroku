@@ -61,9 +61,15 @@ hr {
     height:30vh; 
     overflow-y: scroll;
 }
-
+#gra {
+    margin-top: 10px;
+    float: left;
+    width: 30%;
+    margin-left: 100px;
+}
 .procon img {
     margin-top: 10px;
+    margin-right: 35%;
 }
 
 .procon h1, h2 {
@@ -149,5 +155,13 @@ hr {
 
     .date {
         display: none;
+    }
+    #gra {
+        display: none;
+    }
+    .procon img {
+        margin-top: 10px;
+        text-align: center;
+        margin-right: 0%;
     }
  }

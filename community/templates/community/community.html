@@ -42,7 +42,7 @@
                     {% for c in communitys %} <!--views에 설정한 거-->
                     {% if c.com_id == categorys %} <!--views에서 get_object 설정한 거-->
                         <tr>
-                            <td><a href="{% url 'cmdetail' c.id %}">{{ c.post_title }}</a></td>
+                            <td><a href="{% url 'cmdetail' c.id %}">{{ c.post_title|truncatechars:20 }}</a></td>
                             <td>{{ c.user_id }}</td>
                             <td>{{ c.post_date}}</td>                   
                         </tr>

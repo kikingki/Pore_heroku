@@ -20,20 +20,22 @@
         {% endif %}
     </div>
     <div class="procon">
-        <!-- 회원 등급별 이미지 -->
+        <h1><b>{{ user.nickname }}</b></h1>
+        <h2 id="gra">등급:</h2>
+        <!-- 프로필 정보란 -->
         {% if grade %}
             <img src="{% static 'portfolio/img/two.png' %}" width="50px" hegiht="50px">
         {% elif top %}
             <img src="{% static 'portfolio/img/three.png' %}" width="50px" hegiht="50px">
         {% else %}
             <img src="{% static 'portfolio/img/one.png' %}" width="50px" hegiht="50px">
+            <!-- <p>아마추어의 경우 PO;RE 거래횟수가 3회 이상이 되면 전문가로 분류됩니다.</p> -->
         {% endif %}
-        <!-- 프로필 정보란 -->
-        <h1>{{ user.nickname }}</h1>
         <h2>이메일: {{ user.profile.email }}</h2>
         <h2>연락처: {{ user.profile.phone_number }}</h2>
         <h2>자기소개: {{ user.profile.introduce }}</h2>
     </div>
+<br>
 <br>
 </div>
 <br>
