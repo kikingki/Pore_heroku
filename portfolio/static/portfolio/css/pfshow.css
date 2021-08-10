@@ -1,0 +1,76 @@
+body {
+    text-align: center;
+    font-family: 'GongGothicMedium';
+}
+
+hr {
+    width: 80%;
+}
+
+.all{
+    text-align: center;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.co {
+    margin: 0 auto;
+    width: 45%;
+    max-width: 45%;
+    height: 350px;
+    max-height: 400px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.co img{
+    width: 250px;
+    max-width: 250px;
+    height: 200px;
+    max-height: 200px;
+    display: block;
+    margin : auto;
+}
+
+.co iframe {
+    max-width: 250px;
+    max-height: 200px;
+}
+.co p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin: 0 auto;
+}
+
+/*블록형식 이미지 나열*/
+
+#columns{
+    column-width:200px;
+    column-gap: 15px;
+    float : left;
+    width : auto;
+    margin-right : 50px;
+    margin-left : 60px;
+}
+
+#columns figure{
+    display: inline-block;
+    border:1px solid rgba(0,0,0,0.2);
+    margin:0;
+    margin-bottom: 40px;
+    padding:10px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.5);;
+}
+
+#columns figure img{
+    width: 200px;
+    max-width: 200px;
+    height: 200px;
+    max-height: 200px;
+}
+#columns figure figcaption{
+    border-top:1px solid rgba(0,0,0,0.2);
+    padding:10px;
+    margin-top:11px;
+} 

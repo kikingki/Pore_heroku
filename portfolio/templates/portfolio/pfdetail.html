@@ -1,0 +1,51 @@
+<!-- 포트폴리오 상세 -->
+{% extends 'portfolio/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<head>
+  <script language = "javascript">
+    var imgArray = new Array();
+    imgArray[0] = "https://www.jungle.co.kr/image/8b16bd6f4e1993b9ff371aa8";
+    imgArray[1] = "https://www.jungle.co.kr/image/58a5cf0540e1b1beb7477d25";
+    imgArray[2] = "https://www.jungle.co.kr/image/16b50e47445083da8db966fd";
+    imgArray[3] = "https://www.jungle.co.kr/image/332995e8472ea6040f09294e";
+    
+    function showImage(){
+      var imgNum = Math.round(Math.random()*3);
+      var objImg = document.getElementById("introImg");
+      objImg.src = imgArray[imgNum];
+    }
+  </script>
+</head>
+<link rel="stylesheet" type="text/css" href="/static/portfolio/css/pfdetail.css">
+
+<body onload = "showImage()">
+<div class="banner">
+    <span>
+        <a href="https://www.jungle.co.kr/contest" target="_blank">
+        <img id = "introImg" height="450px" width="300px"></a>
+    </span>
+  </div>
+  <div class="banner2">
+    <span>
+        <a href="https://www.jungle.co.kr/contest/202575" target="_blank">
+        <img src="https://www.jungle.co.kr/image/5e0875724c17ba6ace8a6be8" height="450px" width="300px"></a>
+    </span>
+  </div>
+<div class="detail">
+    <br>
+    <h1>{{portfolio.pf_title}}</h1>
+    <img src="/static/portfolio/img/pore_logo2.png" alt="logo" height="50px" style="vertical-align:middle;">
+    <span style="margin-top:20px;font-size:18px;"><a href="{% url 'userpage' portfolio.user_id.id %}"><b>{{portfolio.user_id.nickname }}</b></a> &emsp;&emsp;&emsp; {{ portfolio.pf_date }}</span>
+    <p>{{portfolio.pf_content | safe}}</p>
+</div>
+<hr>
+{% if portfolio.user_id == user %}
+<a href="{% url 'pfedit' portfolio.id %}"> 수정</a>
+<a href="{% url 'delete' portfolio.id %}"> 삭제</a>
+{% endif %}
+<br><br><br><br><br><br><br>
+{% endblock %}
+</body>

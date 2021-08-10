@@ -1,0 +1,169 @@
+{% extends 'portfolio/base.html' %}
+{% load static %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/static/portfolio/css/pfselect.css">
+</head>
+<body>
+
+<!-- 변수명을 숫자만 사용해 이미지 경로를 띄울 때 문제가 생긴 것 같음. 변수는 영어 또는 영어랑 함께 사용 -->
+<div class="preview" style="margin-top: 100px;">
+    {% for p1 in portfolios_1 %}
+        <a class="title" href="{% url 'pfdetail' p1.id %}">
+        {% if p1.pf_attach %}
+            <img src="{{ p1.pf_attach.url }}" width="250" height="250" alt="포트폴리오 썸네일">
+        {% else %}
+            <img src="{% static 'portfolio/img/이미지없음.jpg' %}" width="250px" hegiht="250px">
+        {% endif %}<br>
+        <b>{{ p1.pf_title }}</b>
+    {% endfor %}</a>
+</div>
+<h3><a href="{% url 'pfshow' 1 %}">디자인 더보기
+    <i class="fas fa-chevron-right" style="font-size: 18px;"></i>
+</a></h3><br>
+
+<div class="preview" style="margin-top: 100px;">
+    {% for p2 in portfolios_2 %}
+        <a class="title" href="{% url 'pfdetail' p2.id %}">
+        {% if p2.pf_attach %}
+            <img src="{{ p2.pf_attach.url }}" width="250" height="250" alt="포트폴리오 썸네일">
+        {% else %}
+            <img src="{% static 'portfolio/img/이미지없음.jpg' %}" width="250px" hegiht="250px">
+        {% endif %}<br>
+        <b>{{ p2.pf_title }}</b>
+    {% endfor %}</a>
+</div>
+<h3><a href="{% url 'pfshow' 2 %}">IT 개발 더보기</a>
+    <i class="fas fa-chevron-right" style="font-size: 18px;"></i>
+</h3><br>
+
+<div class="preview" style="margin-top: 100px;">
+    {% for p3 in portfolios_3 %}
+        <a class="title" href="{% url 'pfdetail' p3.id %}">
+        {% if p3.pf_attach %}
+            <img src="{{ p3.pf_attach.url }}" width="250" height="250" alt="포트폴리오 썸네일">
+        {% else %}
+            <img src="{% static 'portfolio/img/이미지없음.jpg' %}" width="250px" hegiht="250px">
+        {% endif %}<br>
+        <b>{{ p3.pf_title }}</b>
+    {% endfor %}</a>
+</div>
+<h3><a href="{% url 'pfshow' 3 %}">영상 더보기</a>
+    <i class="fas fa-chevron-right" style="font-size: 18px;"></i>
+</h3><br>
+
+<div class="preview" style="margin-top: 100px;">
+    {% for p4 in portfolios_4 %}
+        <a class="title" href="{% url 'pfdetail' p4.id %}">
+        {% if p4.pf_attach %}
+            <img src="{{ p4.pf_attach.url }}" width="250" height="250" alt="포트폴리오 썸네일">
+        {% else %}
+            <img src="{% static 'portfolio/img/이미지없음.jpg' %}" width="250px" hegiht="250px">
+        {% endif %}<br>
+        <b>{{ p4.pf_title }}</b>
+    {% endfor %}</a>
+</div>
+<h3><a href="{% url 'pfshow' 4 %}">사진 더보기</a>
+    <i class="fas fa-chevron-right" style="font-size: 18px;"></i>
+</h3><br>
+
+<div class="preview" style="margin-top: 100px;">
+    {% for p5 in portfolios_5 %}
+        <a class="title" href="{% url 'pfdetail' p5.id %}">
+        {% if p5.pf_attach %}
+            <img src="{{ p5.pf_attach.url }}" width="250" height="250" alt="포트폴리오 썸네일">
+        {% else %}
+            <img src="{% static 'portfolio/img/이미지없음.jpg' %}" width="250px" hegiht="250px">
+        {% endif %}<br>
+        <b>{{ p5.pf_title }}</b>
+    {% endfor %}</a>
+</div>
+<h3><a href="{% url 'pfshow' 5 %}">음향 더보기</a>
+    <i class="fas fa-chevron-right" style="font-size: 18px;"></i>
+</h3><br>
+
+<div class="preview" style="margin-top: 100px;">
+    {% for p6 in portfolios_6 %}
+        <a class="title" href="{% url 'pfdetail' p6.id %}">
+        {% if p6.pf_attach %}
+            <img src="{{ p6.pf_attach.url }}" width="250" height="250" alt="포트폴리오 썸네일">
+        {% else %}
+            <img src="{% static 'portfolio/img/이미지없음.jpg' %}" width="250px" hegiht="250px">
+        {% endif %}<br>
+        <b>{{ p6.pf_title }}</b>
+    {% endfor %}</a>
+</div>
+<h3><a href="{% url 'pfshow' 6 %}">기획 더보기</a>
+    <i class="fas fa-chevron-right" style="font-size: 18px;"></i>
+</h3><br>
+
+<div class="preview" style="margin-top: 100px;">
+    {% for p7 in portfolios_7 %}
+        <a class="title" href="{% url 'pfdetail' p7.id %}">
+        {% if p7.pf_attach %}
+            <img src="{{ p7.pf_attach.url }}" width="250" height="250" alt="포트폴리오 썸네일">
+        {% else %}
+            <img src="{% static 'portfolio/img/이미지없음.jpg' %}" width="250px" hegiht="250px">
+        {% endif %}<br>
+        <b>{{ p7.pf_title }}</b>
+    {% endfor %}</a>
+</div>
+<h3><a href="{% url 'pfshow' 7 %}">번역 더보기</a>
+    <i class="fas fa-chevron-right" style="font-size: 18px;"></i></h3><br>
+
+<div class="preview" style="margin-top: 100px;">
+    {% for p8 in portfolios_8 %}
+        <a class="title" href="{% url 'pfdetail' p8.id %}">
+        {% if p8.pf_attach %}
+            <img src="{{ p8.pf_attach.url }}" width="250" height="250" alt="포트폴리오 썸네일">
+        {% else %}
+            <img src="{% static 'portfolio/img/이미지없음.jpg' %}" width="250px" hegiht="250px">
+        {% endif %}<br>
+        <b>{{ p8.pf_title }}</b>
+    {% endfor %}</a>
+</div>
+<h3><a href="{% url 'pfshow' 8 %}">작문 더보기</a>
+    <i class="fas fa-chevron-right" style="font-size: 18px;"></i>
+</h3><br>
+
+<div class="preview" style="margin-top: 100px;">
+    {% for p9 in portfolios_9 %}
+        <a class="title" href="{% url 'pfdetail' p9.id %}">
+        {% if p9.pf_attach %}
+            <img src="{{ p9.pf_attach.url }}" width="250" height="250" alt="포트폴리오 썸네일">
+        {% else %}
+            <img src="{% static 'portfolio/img/이미지없음.jpg' %}" width="250px" hegiht="250px">
+        {% endif %}<br>
+        <b>{{ p9.pf_title }}</b>
+    {% endfor %}</a>
+</div>
+<h3><a href="{% url 'pfshow' 9 %}">마케팅 더보기</a>
+    <i class="fas fa-chevron-right" style="font-size: 18px;"></i>
+</h3><br>
+
+<div class="preview" style="margin-top: 100px;">
+    {% for p10 in portfolios_10 %}
+        <a class="title" href="{% url 'pfdetail' p10.id %}">
+        {% if p10.pf_attach %}
+            <img src="{{ p10.pf_attach.url }}" width="250" height="250" alt="포트폴리오 썸네일">
+        {% else %}
+            <img src="{% static 'portfolio/img/이미지없음.jpg' %}" width="250px" hegiht="250px">
+        {% endif %}<br>
+        <b>{{ p10.pf_title }}</b>
+    {% endfor %}</a>
+</div>
+<h3><a href="{% url 'pfshow' 10 %}">기타 더보기</a>
+    <i class="fas fa-chevron-right" style="font-size: 18px;"></i>
+</h3><br>
+<br><br>
+{% endblock %}
+</body>
+</html>

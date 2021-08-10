@@ -1,0 +1,16 @@
+{% extends 'portfolio/base.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'community/css/cmedit.css' %}">
+
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <table>
+        {{ form.as_table }}
+    </table>
+    <div class="button">
+        <input class="up" type="submit" value="수정완료">
+    </div>
+</form><br><br>
+{% endblock %}

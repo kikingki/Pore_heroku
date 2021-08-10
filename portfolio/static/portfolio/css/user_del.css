@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700&display=swap');
+
+body {
+    text-align: center;
+    font-size: 25px;
+    font-family: 'Noto Sans KR', sans-serif;
+    text-align: center;
+}
+
+
+form{
+    margin: 10vh auto;
+}
+
+.form-control {
+    width: 500px;
+    margin: auto;
+}

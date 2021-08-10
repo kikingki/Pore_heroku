@@ -1,0 +1,59 @@
+{% extends 'portfolio/base.html' %}
+{% load static %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 합쳐지고 최소화된 최신 CSS -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" type="text/css" href="/static/community/css/cmdetail.css">
+</head>
+<body>
+    <br>
+    <div class="textbox-top">
+        <h2>{{community.post_title}}</h2>
+        <h5>{{ community.user_id }}</h5>
+        <p>{{ community.post_date }}</p>
+
+        {% if community.user_id == user %}
+        <button type="submit">
+            <a href="{% url 'cmedit' community.id %}">수정</a></button>
+        <button type="submit"> 
+            <a href="{% url 'cmdelete' community.id %}">삭제</a></button>
+        {% endif %}
+        <!-- <button type="submit">
+            <a href="{% url 'cmedit' community.id %}">수정</a>
+        </button>
+        <button type="submit">
+            <a href="{% url 'cmdelete' community.id %}">삭제</a>
+        </button> -->
+    </div>
+    <div class="textbox-bottom">
+        <p>{{community.post_content | safe}}</p>
+    </div>
+    <hr>
+    <br>
+    <div class="comments">
+        {% for cmcomment in community.cmcomment.all %}
+        <p>작성자: {{ cmcomment.user_id }}</p>
+        <p>{{cmcomment.cm_comment}}</p>
+        <hr>
+        {% endfor %}
+        <form method="POST" action="{% url 'cmdetail' community.id %}">
+            <div class="com">
+                {% csrf_token %}
+                <p>{{ form.as_p }}</p>
+            </div>
+            <div class="inp">
+                <input type="submit" value="submit" class="submit-button">
+            </div>
+        </form>
+    </div><br><br>
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700&display=swap');
+
+body {
+    font-family: 'Nanum Gothic', sans-serif;
+}
+
+.warning {
+    width: 80%;
+    margin: 6% auto;
+    padding-top: 10px;
+    border: 1px solid black;
+    background-color: rgba(192, 224, 245, 0.253);
+    text-align: center;
+    box-shadow: 3px 3px 5px;
+}
+
+.yes {
+    display: inline-block;
+    width: 100px;
+    height: 60px;
+    border: 3px solid black;
+    margin: 5px 10% 20px 20px;
+    text-align: center;
+    background-color: white;
+    border-radius: 25px 25px 25px 25px;
+    padding-top: 10px;
+}
+
+.no {
+    display: inline-block;
+    width: 100px;
+    height: 60px;
+    border: 3px solid black;
+    border-radius: 25px 25px 25px 25px;
+    padding-top: 10px;
+}

@@ -1,0 +1,66 @@
+body {
+    background: #eee;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #000;
+    margin: 0;
+    padding: 0;
+}
+
+hr {
+    color: rgb(180, 173, 173);
+    border: 1px solid #ece0d9;
+}
+
+.textbox-top {
+    background-color: #ece0d9;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.textbox-bottom {
+    width: 80%;
+    margin: 0 auto;
+    border: 3px solid #ece0d9;
+}
+
+.comments {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.com {
+    float: left;
+    width: 80%;
+}
+
+/* 댓글 작성하는 칸 */
+.com input {
+    width: 100%;
+    height: 150px;
+}
+
+/* 댓글: 글씨(first-child 안하면 작성하는 글씨까지 css 적용됨 */
+.com :first-child{
+    color: firebrick;
+    font-size: 20px;
+}
+
+/* 제출 */
+.inp { 
+    float: left;
+    width: 20%;
+}
+
+/* submit 크기 */
+.inp input {
+    padding: 5px;
+    width: 130px;
+    font-size: 18px;
+    vertical-align: middle;
+    margin: 100px auto;
+    margin-left: 20px;
+    background-color: #D6002E;
+    border-color: #eee;
+    color: #eee;
+}

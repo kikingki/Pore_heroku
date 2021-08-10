@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700&display=swap');
+
+
+.end {
+    border: 3px solid #ece0d9;
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 50px;
+    min-height: 500px;
+
+}
+
+body {
+    font-family: 'Nanum Gothic', sans-serif;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+}
+
+a { text-decoration:none !important;
+ }
+
+a:hover { text-decoration:none !important }
+
+.buttons {
+    display: grid;
+}
+
+.buttons a {
+    color: white !important;
+}
+button {
+    background-color: #D6002E;
+    border: none;
+
+    font-weight: 20px;
+    padding : 10px;
+    border-radius: 5px;
+    width: 300px;
+    height: 50px;
+    font-size: 20px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+
+.goguide {
+    background-color: #f3d9de;
+    border: none;
+    font-weight: 20px;
+    padding : 10px;
+    border-radius: 5px;
+    width: 300px;
+    height: 50px;
+    font-size: 20px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+
+
+}
+.goav {
+    background-color: #d6002e54;
+    border: none;
+    font-weight: 20px;
+    padding : 10px;
+    border-radius: 5px;
+    width: 300px;
+    height: 50px;
+    font-size: 20px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+
+
+}
+
+.gopf {
+    background-color: #d6002e9d;
+    border: none;
+    font-weight: 20px;
+    padding : 10px;
+    border-radius: 5px;
+    width: 300px;
+    height: 50px;
+    font-size: 20px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+.cele {
+    width: 300px;
+    height: 300px;
+    margin-top: 70px;
+}

@@ -1,0 +1,50 @@
+{% extends 'portfolio/base.html' %}
+{% load static %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'average/css/average.css' %}">
+</head>
+<body>
+    <div class="average">
+        <h1>{{ field }} 분야의 평균가는
+        {% if average.avg == None %}
+             0원입니다.</h1>
+        {% else %}
+            {{average.avg}} 입니다.</h1>
+        {% endif %}
+
+        <p>최근 거래된 포트폴리오 보러가기</p>
+        <div class="pfpreview">
+            {% for pf in portfolio %}
+            <a href="{% url 'pfdetail' pf.id %}">
+                {% if pf.pf_attach %}
+                <img src="{{ pf.pf_attach.url }}" width="250" height="250" alt="포트폴리오 썸네일">
+                {% else %} 
+                    <img src="{% static 'portfolio/img/이미지없음.jpg' %}" width="200px" hegiht="200px">
+                {% endif %}<br>
+                <b>{{ pf.pf_title }}</b>
+            </a>
+            {% endfor %}
+        </div>
+        <!-- 혹시 썸네일 사진 뜨는 개수를 바꾸고 싶으시면
+             average app의 views.py에서 portfolio = Portfolio.objects.filter(f_id=field_id)[:5] 의 [:5]안의 숫자를 바꾸시면 됩니다!!-->
+        
+        <button class="deal">{{field}}<a href="{% url 'pfshow' field.id %}"><br>지금 거래하기</a></button>
+        <br>
+        <!--views.py애 field = 으로 받아온 거!-->
+        
+            <button type="button"><a href="{% url 'fieldchoose' %}">이전으로</a></button>
+            <br><br>
+    </div>
+    
+</body>
+</html>
+    
+{% endblock %}
