@@ -1,5 +1,6 @@
 {% extends 'portfolio/base.html' %}
 {% load static %}
+{% load humanize %}
 
 {% block content %}
 <!DOCTYPE html>
@@ -17,7 +18,7 @@
             {% if average.avg == None %}
                  0원입니다.</h1>
             {% else %}
-            {{ average.avg|floatformat }}원 입니다.</h1>
+            {{ average.avg|floatformat|intcomma }}원 입니다.</h1>
             {% endif %}
 
         <p>{{ field }} 분야의 포트폴리오 보러가기</p>

@@ -1,5 +1,6 @@
 {% extends 'portfolio/base.html' %}
 {% load static %}
+{% load humanize %}
 
 {% block content %}
 <link rel="stylesheet" type="text/css" href="/static/portfolio/css/deal_detail.css">
@@ -18,7 +19,7 @@
         {% elif deal.status == "paid" %}
         [결제 확인]
         {% endif %}{{deal.deal_title}}</h2>
-    <h1>{{ deal.price }}원</h1>
+    <h1>{{ deal.price|intcomma }}원</h1>
     <i class="far fa-clock" style="font-size: 25px;"></i><span> {{ deal.deal_date }}</span>
 </div>
 </div>
