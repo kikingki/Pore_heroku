@@ -32,7 +32,7 @@ class Business(models.Model):
     deal_content = models.TextField()
     deal_date = models.DateTimeField()
     u_id = models.ForeignKey(CustomUser, on_delete=models.CASCADE, related_name='business', null=True)
-    price = models.CharField(max_length=200)
+    price = models.IntegerField()
     status = models.CharField(
         max_length=9,
         choices=(

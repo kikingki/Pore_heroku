@@ -14,7 +14,7 @@ from .forms import PortfolioForm, CheckPasswordForm, ProfileForm, BusinessForm, 
 
 
 def pfshow(request, field_id):
-    portfolios = Portfolio.objects.all()
+    portfolios = Portfolio.objects.all().order_by('-pf_date')
     field = get_object_or_404(Field, pk=field_id)
     return render(request, 'portfolio/pfshow.html', {'field':field,'portfolios':portfolios})
 
@@ -272,16 +272,16 @@ def payCancel(request):
 
 def pfselect(request):
     # 불필요한 all(), values() 메소드 삭제
-    portfolios_1 = Portfolio.objects.filter(f_id="1")[:3]
-    portfolios_2 = Portfolio.objects.filter(f_id="2")[:3]
-    portfolios_3 = Portfolio.objects.filter(f_id="3")[:3]
-    portfolios_4 = Portfolio.objects.filter(f_id="4")[:3]
-    portfolios_5 = Portfolio.objects.filter(f_id="5")[:3]
-    portfolios_6 = Portfolio.objects.filter(f_id="6")[:3]
-    portfolios_7 = Portfolio.objects.filter(f_id="7")[:3]
-    portfolios_8 = Portfolio.objects.filter(f_id="8")[:3]
-    portfolios_9 = Portfolio.objects.filter(f_id="9")[:3]
-    portfolios_10 = Portfolio.objects.filter(f_id="10")[:3]
+    portfolios_1 = Portfolio.objects.filter(f_id="1").order_by('-pf_date')[:3]
+    portfolios_2 = Portfolio.objects.filter(f_id="2").order_by('-pf_date')[:3]
+    portfolios_3 = Portfolio.objects.filter(f_id="3").order_by('-pf_date')[:3]
+    portfolios_4 = Portfolio.objects.filter(f_id="4").order_by('-pf_date')[:3]
+    portfolios_5 = Portfolio.objects.filter(f_id="5").order_by('-pf_date')[:3]
+    portfolios_6 = Portfolio.objects.filter(f_id="6").order_by('-pf_date')[:3]
+    portfolios_7 = Portfolio.objects.filter(f_id="7").order_by('-pf_date')[:3]
+    portfolios_8 = Portfolio.objects.filter(f_id="8").order_by('-pf_date')[:3]
+    portfolios_9 = Portfolio.objects.filter(f_id="9").order_by('-pf_date')[:3]
+    portfolios_10 = Portfolio.objects.filter(f_id="10").order_by('-pf_date')[:3]
     return render(request, 'portfolio/pfselect.html',
     {'portfolios_1':portfolios_1, 'portfolios_2':portfolios_2, 'portfolios_3':portfolios_3, 'portfolios_4':portfolios_4, 'portfolios_5':portfolios_5,
     'portfolios_6':portfolios_6, 'portfolios_7':portfolios_7, 'portfolios_8':portfolios_8, 'portfolios_9':portfolios_9, 'portfolios_10':portfolios_10})

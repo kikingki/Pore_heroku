@@ -14,13 +14,13 @@
 <body>
     <div class="average">
         <h1>{{ field }} 분야의 평균가는
-            {% if average.aver == None %}
+            {% if average.avg == None %}
                  0원입니다.</h1>
             {% else %}
-            {{ average.aver|floatformat }}원 입니다.</h1>
+            {{ average.avg|floatformat }}원 입니다.</h1>
             {% endif %}
 
-        <p>최근 거래된 포트폴리오 보러가기</p>
+        <p>{{ field }} 분야의 포트폴리오 보러가기</p>
         <div class="pfpreview">
             {% for pf in portfolio %}
             <a href="{% url 'pfdetail' pf.id %}">

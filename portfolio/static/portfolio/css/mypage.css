@@ -61,18 +61,14 @@ hr {
     height:30vh; 
     overflow-y: scroll;
 }
-#gra {
-    margin-top: 10px;
-    float: left;
-    width: 30%;
-    margin-left: 100px;
-}
-.procon img {
-    margin-top: 10px;
-    margin-right: 35%;
+
+.gra {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.procon h1, h2 {
+.procon h1, h4 {
     margin: 5px;
     line-height: 1.3;
 }
@@ -145,9 +141,6 @@ hr {
         vertical-align: middle;
         height:30vh; 
         overflow-y: scroll;
-    }
-    .procon h2 {
-        font-size: 20px;
     }
     .word img {
         max-width: 90%;

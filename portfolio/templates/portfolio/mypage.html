@@ -43,8 +43,7 @@
         {% endif %}
     </div>
     <div class="procon">
-        <h1><b>{{ user.nickname }}</b></h1>
-        <h2 id="gra">등급:</h2>
+        <div class="gra">
         <!-- 프로필 정보란 -->
         {% if grade %}
             <img src="{% static 'portfolio/img/two.png' %}" width="50px" hegiht="50px">
@@ -54,9 +53,12 @@
             <img src="{% static 'portfolio/img/one.png' %}" width="50px" hegiht="50px">
             <!-- <p>아마추어의 경우 PO;RE 거래횟수가 3회 이상이 되면 전문가로 분류됩니다.</p> -->
         {% endif %}
-        <h2>이메일: {{ user.profile.email }}</h2>
-        <h2>연락처: {{ user.profile.phone_number }}</h2>
-        <h2>자기소개: {{ user.profile.introduce }}</h2>
+        <h1><b>{{ user.nickname }}</b></h1>
+        </div>
+        <h4>직업: {{ user.field_id.field_name }}</h4>
+        <h4>이메일: {{ user.profile.email }}</h4>
+        <h4>연락처: {{ user.profile.phone_number }}</h4>
+        <h4>자기소개: {{ user.profile.introduce }}</h4>
     </div>
 <br>
 </div>
@@ -65,7 +67,6 @@
 <h3 style="color: #D6002E;"><b>거래글</b></h3>
 <div class="mypf">
     {% for b in business %}
-    <!-- 포트폴리오의 user_id와 현재 로그인 유저가 동일한 것만 보여줌 -->
     {% if b.u_id == user %}
     <div class="deal" style="border: 1px solid black;">
         <br>
@@ -90,7 +91,6 @@
 <h3 style="color: #D6002E;"><b>PORTFOLIO</b></h3>
 <div class="mypf">
     {% for p in portfolios %}
-     <!-- 포트폴리오의 user_id와 현재 로그인 유저가 동일한 것만 보여줌 -->
     <div class="pf" style="border: 1px solid black;">
         <br>
         <a style="font-size: 25px;" href="{% url 'pfdetail' p.id %}"><b>{{p.pf_title}}</b></a>
