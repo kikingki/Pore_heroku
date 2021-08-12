@@ -17,7 +17,7 @@
     <br>
     <div class="textbox-top">
         <h2>{{community.post_title}}</h2>
-        <h5>{{ community.user_id }}</h5>
+        <h5>{{ community.user_id.nickname }}</h5>
         <p>{{ community.post_date }}</p>
 
         {% if community.user_id == user %}
@@ -40,7 +40,7 @@
     <br>
     <div class="comments">
         {% for cmcomment in community.cmcomment.all %}
-        <p>작성자: {{ cmcomment.user_id }}</p>
+        <p>작성자: {{ cmcomment.user_id.nickname }}</p>
         <p>{{cmcomment.cm_comment}}</p>
         <hr>
         {% endfor %}

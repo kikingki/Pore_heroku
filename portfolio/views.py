@@ -235,9 +235,9 @@ def kakaoPayLogic(request, id):
         'tax_free_amount':'0',
         # 내 애플리케이션 -> 앱설정 / 플랫폼 - WEB 사이트 도메인에 등록된 정보만 가능합니다
         # * 등록 : http://IP:8000 
-        'approval_url':'http://127.0.0.1:8000/portfolio/paySuccess', 
-        'fail_url':'http://127.0.0.1:8000/portfolio/payFail',
-        'cancel_url':'http://127.0.0.1:8000/portfolio/payCancel'
+        'approval_url':'https://pore-likelion.herokuapp.com/portfolio/paySuccess', 
+        'fail_url':'https://pore-likelion.herokuapp.com/portfolio/payFail',
+        'cancel_url':'https://pore-likelion.herokuapp.com/portfolio/payCancel'
     }
     _res = requests.post(_url, data=_data, headers=_headers)
     _result = _res.json()
