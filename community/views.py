@@ -80,10 +80,9 @@ def community_like(request):
 
     if community.likes_user.filter(id=user.id).exists():
         community.likes_user.remove(user)
-        message = '좋아요 취소'
+    
     else:
         community.likes_user.add(user)
-        message = '좋아요'
 
-    context = {'likes_count':community.count_likes_user(), 'message': message}
+    context = {'likes_count':community.count_likes_user()}
     return HttpResponse(json.dumps(context), content_type="application/json")
