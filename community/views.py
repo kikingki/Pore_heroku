@@ -4,6 +4,10 @@ from django.utils import timezone
 from django.core.paginator import Paginator
 from .forms import CommunityForm, CmCommentForm
 from .models import Category, Community
+from django.http.response import HttpResponse
+from django.contrib.auth.decorators import login_required
+from django.views.decorators.http import require_POST
+import json
 
 def community(request, com_id):
     categorys = get_object_or_404(Category, pk=com_id)
@@ -53,6 +57,7 @@ def cmdetail(request, id):
             cmcomment = form.save(commit=False)
             cmcomment.cm_id = community
             cmcomment.user_id = request.user
+            cmcomment.cm_date = timezone.now()
             cmcomment.cm_comment = form.cleaned_data['cm_comment']
             cmcomment.save()
             return redirect('cmdetail', id)
@@ -65,3 +70,20 @@ def cmdelete(request, id):
     com_id = community.com_id.id
     community.delete()
     return redirect('community', com_id)
+
+@login_required
+@require_POST
+def community_like(request):
+    pk = request.POST.get('pk', None)
+    community = get_object_or_404(Community, pk=pk)
+    user = request.user
+
+    if community.likes_user.filter(id=user.id).exists():
+        community.likes_user.remove(user)
+        message = '좋아요 취소'
+    else:
+        community.likes_user.add(user)
+        message = '좋아요'
+
+    context = {'likes_count':community.count_likes_user(), 'message': message}
+    return HttpResponse(json.dumps(context), content_type="application/json")
