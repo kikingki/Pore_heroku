@@ -8,4 +8,5 @@ urlpatterns = [
     path('cmedit/<int:id>/', views.cmedit, name='cmedit'),
     path('cmdetail/<int:id>/', views.cmdetail, name='cmdetail'),
     path('delete/<int:id>/', views.cmdelete, name='cmdelete'),
+    path('like/', views.community_like, name='community_like')
 ]
