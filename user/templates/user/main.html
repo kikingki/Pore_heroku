@@ -63,6 +63,34 @@
 <br>
 <hr>
 
+<!--새로운 카드-->
+<div style="display:flex">
+{% for p in portfolios %}
+  <div class ="container">
+    <div class="row" style="margin : 0 100px 100px 0">
+      <div class="col-6">
+        <p>portfolio</p>
+        <div class="card" style=" width : 250px; height : 400px;">
+          <div class="card-header">
+          (이곳에 작성자 이름이 나오도록)
+          </div>
+          {% if p.pf_attach %}
+            <img src="{{ p.pf_attach.url }}" alt="포트폴리오 썸네일" style = "width : 200px; height:200px; margin : 10px auto"/>
+          {% else %}
+            <img src="{% static 'portfolio/img/이미지없음.jpg' %}"/>
+          {% endif %}<br>
+          <div class="card-body">
+            <h5 class="card-title">{{p.pf_title}}</h5>
+            <p class="card-text">포트폴리오 설명이 들어갈 곳입니다</p>
+            <a href="{% url 'pfdetail' p.id %}" class="btn btn-primary" style="background-color: #d6002e; border-color: #d6002e;">More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endfor %}
+</div>
+<!-- 이전 카드
 <div class="container">
     <div class="main-content">
         {% for p in portfolios %}
@@ -80,7 +108,7 @@
         {% endfor %}
     </div>
 </div><br><br>
-
+-->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
