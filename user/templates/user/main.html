@@ -15,100 +15,79 @@
       rel="stylesheet"
       href="https://unpkg.com/swiper/swiper-bundle.min.css"
     />
-
+    <!--masonry 라이브러리-->
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+    <script src="/path/to/masonry.pkgd.min.js"></script>
 </head>
 <body>
+
  <!-- Swiper(배너) -->
  <div class="swiper-container mySwiper">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide">
-        <a href="http://www.knps.or.kr/front/portal/open/pnewsDtl.do?menuNo=7020013&pnewsId=PNEWSM019425">
-          <img src="/static/user/img/영상공모전.png">
-        </a>
-      </div>
-      <div class="swiper-slide">
-        <a href="https://www.digitalcitizen.kr/front/content/contentViewer.do?contentId=creativeCnts">
-          <img src="/static/user/img/창작공모전.png">
-        </a>
-      </div>
-      <div class="swiper-slide">
-        <a href="https://url.vet/r5iqe">
-          <img src="/static/user/img/스토리텔링공모전.jpg">
-        </a>
-      </div>
-      <div class="swiper-slide">
-        <a href="https://blog.naver.com/dibrary1004/222438341358">
-          <img src="/static/user/img/캐릭터공모전.png">
-        </a>
-      </div>
+  <div class="swiper-wrapper">
+    <div class="swiper-slide">
+      <a href="http://www.knps.or.kr/front/portal/open/pnewsDtl.do?menuNo=7020013&pnewsId=PNEWSM019425">
+        <img src="/static/user/img/영상공모전.png">
+      </a>
     </div>
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
+    <div class="swiper-slide">
+      <a href="https://www.digitalcitizen.kr/front/content/contentViewer.do?contentId=creativeCnts">
+        <img src="/static/user/img/창작공모전.png">
+      </a>
+    </div>
+    <div class="swiper-slide">
+      <a href="https://url.vet/r5iqe">
+        <img src="/static/user/img/스토리텔링공모전.jpg">
+      </a>
+    </div>
+    <div class="swiper-slide">
+      <a href="https://blog.naver.com/dibrary1004/222438341358">
+        <img src="/static/user/img/캐릭터공모전.png">
+      </a>
+    </div>
   </div>
+  <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div>
+</div>
 
-  <!-- Swiper JS -->
-  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<!-- Swiper JS -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
-  <!-- Initialize Swiper -->
-  <script>
-    var swiper = new Swiper(".mySwiper", {
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-    });
-  </script>
+<!-- Initialize Swiper -->
+<script>
+  var swiper = new Swiper(".mySwiper", {
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+</script>
 
 <br>
 <br>
 <hr>
 
-<!--새로운 카드-->
-<div style="display:flex">
+<!--진짜 새로운 카드-->
 {% for p in portfolios %}
-  <div class ="container">
-    <div class="row" style="margin : 0 100px 100px 0">
-      <div class="col-6">
-        <p>portfolio</p>
-        <div class="card" style=" width : 250px; height : 400px;">
-          <div class="card-header">
-          (이곳에 작성자 이름이 나오도록)
-          </div>
-          {% if p.pf_attach %}
-            <img src="{{ p.pf_attach.url }}" alt="포트폴리오 썸네일" style = "width : 200px; height:200px; margin : 10px auto"/>
-          {% else %}
-            <img src="{% static 'portfolio/img/이미지없음.jpg' %}"/>
-          {% endif %}<br>
-          <div class="card-body">
-            <h5 class="card-title">{{p.pf_title}}</h5>
-            <p class="card-text">포트폴리오 설명이 들어갈 곳입니다</p>
-            <a href="{% url 'pfdetail' p.id %}" class="btn btn-primary" style="background-color: #d6002e; border-color: #d6002e;">More</a>
-          </div>
-        </div>
-      </div>
-    </div>
+<div class="grid">
+  <div class="grid-item">
+    {% if p.pf_attach %}
+    <a href="{% url 'pfdetail' p.id %}"></a>
+      <img src="{{ p.pf_attach.url }}" alt="포트폴리오 썸네일" />
+    </a>
+    {% else %}
+      <img src="{% static 'portfolio/img/이미지없음.jpg' %}">
+    {% endif %}<br>
   </div>
-{% endfor %}
 </div>
-<!-- 이전 카드
-<div class="container">
-    <div class="main-content">
-        {% for p in portfolios %}
-        <article class="component">
-            <div class="description">
-              {% if p.pf_attach %}
-                <img src="{{ p.pf_attach.url }}" width="250" height="250" alt="포트폴리오 썸네일">
-              {% else %}
-                <img src="{% static 'portfolio/img/이미지없음.jpg' %}" width="200px" hegiht="200px">
-              {% endif %}<br>
-              <h3 style="height: 7px;">{{p.pf_title}}</h3>
-              <a  href="{% url 'pfdetail' p.id %}" class="button">MORE</a>
-            </div>
-        </article>
-        {% endfor %}
-    </div>
-</div><br><br>
--->
+{% endfor %}
+<script>
+
+var msnry = new Masonry( '.grid', {
+  itemSelector: '.grid-item',
+  columnWidth: 200
+  });
+  
+</script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>

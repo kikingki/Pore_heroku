@@ -156,6 +156,11 @@ h2 {
     margin-bottom: 2px;
     color: white;
 }
+/*masony css*/
+.grid-item { width: 200px; }
+.grid-item--width2 { width: 400px; }
+.grid-item img {display: block; min-width:100%; max-width: 100%;}
+.grid-sizer, .grid-item { width: 200px; }
 /*밑에 두 미디어는 미디어쿼리를 사용해서 responsive디자인을 설정했다고 한다..!*/
 @media (min-width: 480px) {
     .component {
