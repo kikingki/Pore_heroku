@@ -4,7 +4,7 @@
 {% block content %}
 <link rel="stylesheet" type="text/css" href="/static/portfolio/css/paylist.css">
 <br>
-<h1>{{ user.nickname }}님의 거래 내역</h1>
+<h1>{{ user.nickname }}님의 구매 내역</h1>
 <br>
 <div class="list">
     <table>
@@ -12,20 +12,19 @@
             <tr>
                 <th>결제일</th>
                 <th>거래명</th>
-                <th>결제 수단</th>
+                <th>판매자</th>
                 <th>거래가</th>
               </tr>
         </thead>
         <tbody>
           {% for p in pay %}
-          {% if p.u_id == user %}
             <tr>
-                <td>{{ p.deal_date }}</td>
-                <td>{{ p.deal_title }}</td>
-                <td>카카오페이</td>
+                <td>{{ p.deal_date|date:'Y년 m월 d일 H:i' }}</td>
+                <td><a href="{% url 'dealdetail' p.id %}">{{ p.deal_title }}</a></td>
+                <td><a href="{% url 'userpage' p.u_id.id %}">{{ p.u_id.nickname }}</a></td>
                 <td>{{ p.price }}</td>
-              </tr>
-          {% endif %}
+              </a>
+            </tr>
           {% endfor %}
         </tbody>
       </table>

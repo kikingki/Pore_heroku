@@ -42,3 +42,4 @@ class Business(models.Model):
         default='ready',
         db_index=True)
     field_id = models.ForeignKey(Field, on_delete=models.CASCADE, related_name='business', null=True)
+    deal_buyer = models.CharField(max_length=100)

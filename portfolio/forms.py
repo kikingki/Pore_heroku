@@ -25,7 +25,7 @@ class PortfolioForm(forms.ModelForm):
 class BusinessForm(forms.ModelForm):
     class Meta:
         model = Business
-        fields = ['deal_title', 'deal_content', 'price', 'status']
+        fields = ['deal_title', 'deal_content', 'price']
 
         # deal_content 위젯으로 summernote 사용
         widgets = {
@@ -36,7 +36,6 @@ class BusinessForm(forms.ModelForm):
             'deal_title': '제목',
             'deal_content': '내용',
             'price': '가격',
-            'status': '결제 상태',
         }
         
 class ProfileForm(forms.ModelForm):
