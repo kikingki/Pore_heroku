@@ -12,76 +12,81 @@ body {
     margin: 0;
     padding: 0;
 }
-/* .swiper-wrapper {
-    width: ;
-} */
-/*새 배너*/
-.swiper-container {
-    width: 1100px;
-    height: 450px;
-    margin: 0 auto;
+
+/*슬라이드*/
+
+#slide-container {
+    width: 1000px;
+    margin: auto;
     margin-top: 20px;
+    
 }
 
-.thum {
-    width: 1100px;
-    height: 450px;
-    margin: 0 auto;
+.slide_wrap { 
+    position: relative;
+    width: 400px; 
+    margin: auto; 
+    padding-bottom: 0px; 
 }
 
-.swiper-slide {
+.slide_box { 
+    width: 100%; 
+    margin: auto; 
+    overflow-x: hidden;
+}
+
+.slide_content{ 
+    /* 이곳에 작성해주세요 */
+    display: table;
+    float: left;
+    width: 400px; 
+    height: 400px;
+}
+
+.slide_content > p{
+    display:table-cell;
+    vertical-align: middle;
     text-align: center;
-    font-size: 18px;
-    /* background: #fff; */
-
-    /* Center slide text vertically */
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    -webkit-justify-content: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    -webkit-align-items: center;
-    align-items: center;
+    font-size: 100px;
+    font-weight: bold;
 }
 
-.swiper-slide img {
-    display: block;
-    height: 450px;
-    width: 670px;
-    margin: 0 auto;
-    object-fit: cover;
+.slide01 {
+    background-color : #FADEE1
 }
 
-/*p문*/
-.p {
-    margin: 20px 0px;
-}
-/*카드 박스형태로*/
-html {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+.slide02 {
+    background-color : #FAD4AE;
 }
 
-.swiper-button-next {
-    margin-right: 150px;
-    width: 100px;
-    height: 100px;
+.slide03 {
+    background-color : #FAF1D6;
 }
-.swiper-button-prev {
-    margin-left: 150px;
-    width: 100px;
-    height: 100px;
+
+.slide04 {
+    background-color : #D9F1F1;
 }
-*,
-*:after,
-*:before {
-    box-sizing: inherit;
+
+
+.slide_btn_box > button {
+    position: absolute;
+    top: 50%;
+    margin-top: -45px;
+    width: 60px;
+    height: 60px;
+    font-size: 16px;
+    color: gray;
+    background: none;
+    border: 1px solid #ddd;
+    cursor: pointer;
+}
+
+.slide_btn_box > .slide_btn_prev {
+    left: -100px;
+}
+
+.slide_btn_box > .slide_btn_next {
+    right: -100px;
 }
 
 h2 {
@@ -90,89 +95,29 @@ h2 {
 }
 
 /*카드이미지 모든 블럭을 감싸는 컨테이너*/
+.card-container {
+    text-align: center;
+    display: flex;
+}
+
 .container {
     margin: 5px auto;
     width: 80%;
     display: flex;
+    margin-left: 10px;
+    margin-right: 10px;
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
-}
-/*description블럭 정렬*/
-.main-content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-.component{
-    width: 350px;
-    max-width: 350px;
-    margin: 0 auto;
-}
-/*카드이미지에서 이미지*/
-.component img {
-    width: 250px;
-    max-width: 250px;
-    height: 200px;
-    max-height: 200px;
-    display: block;
-    margin : auto;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
 
-.component iframe {
-    max-width: 250px;
-    height: 200px;
-}
+.container:hover {
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  }
 
-/*카드에서 설명글 & 카드 색깔*/
-.component .description {
-    text-align: center;
-    max-width: 330px;
-    padding: 1rem;
-    margin: 0 auto;
-    margin-bottom: 2rem;
-    background-color: #ece5e1;
-}
-.description p {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    margin: 0 auto;
-}
-/*카드에서 게시글 제목 */
-.description h3 {
-    margin: 5px;
-    font-size: 1.3rem;
-    line-height: 1.5;
-    font-weight: 700;
-}
-/*MORE 버튼*/
-.description .button {
-    display: block;
-    text-decoration: none;
-    background-color: #d6002e;
-    padding: 0.6rem 0.6rem;
-    margin-top: 2rem;
-    margin-bottom: 2px;
-    color: white;
-}
-/*masony css*/
-.grid-item { width: 200px; }
-.grid-item--width2 { width: 400px; }
-.grid-item img {display: block; min-width:100%; max-width: 100%;}
-.grid-sizer, .grid-item { width: 200px; }
-/*밑에 두 미디어는 미디어쿼리를 사용해서 responsive디자인을 설정했다고 한다..!*/
-@media (min-width: 480px) {
-    .component {
-        flex: 0 0 calc(50% - 1rem);
-    }
-}
 
-@media (min-width: 768px) {
-    .component {
-        flex: 0 0 calc(33.3% - 1rem);
-    }
-}
 
 .dropdown {
     margin-left: 13%;
