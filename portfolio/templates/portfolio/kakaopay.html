@@ -4,17 +4,13 @@
 {% block content %}
 <head>
     <style>
-        @font-face {
-            font-family: 'GongGothicMedium';
-            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/GongGothicMedium.woff') format('woff');
-            font-weight: normal;
-            font-style: normal;
-        }
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700&display=swap');
 
         body {
             text-align: center;
-            font-family: 'GongGothicMedium';
+            font-family: 'Nanum Gothic', sans-serif;
+            height: 100%;
         }
         input {
             background-color: yellow;
@@ -30,9 +26,9 @@
             margin: auto;
             padding: 15px;
         }
-        b {
-            color: tomato;
-        }
+        footer {
+        position: absolute;
+    }
     </style>
 </head>
 <body>
@@ -42,7 +38,7 @@
     {% csrf_token %}
     <div>
         <h2>결제 품목:{{ deal.deal_title }}</h2>
-        <h2>가격:<b>{{ deal.price }}</b></h2>
+        <h2>가격:<b style=" color: tomato;">{{ deal.price }}</b></h2>
     </div>
     <input type="submit" value="결제">
 </form>

@@ -1,14 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700&display=swap');
 
 body {
+    font-family: 'Nanum Gothic', sans-serif;
     text-align: center;
-    font-family: 'GongGothicMedium';
+}
+.gra {
+    width: 30%;
+    height: 250px;
+    float: left;
+    text-align: center;
+}
+.text {
+    width: 70%;
+    height: 250px;
+    float: right;
+    text-align: left;
 }
 
-.all {
+.gra img {
+    width:150px;
+    height:150px;
+    border-radius: 50%; 
+    border: 2px solid white;
+}
+/* .all {
    margin-left: 20%;
    position: relative;
-}
+} */
 
 .content img {
     max-width: 35vw;
@@ -21,7 +40,12 @@ body {
 } 
 
 .content {
-    width: 50%;
+    max-width: 70%;
+    text-align: center;
+    margin: auto;
+}
+/* 
+.content {
     display: inline-block;
     left: 200px;
     right: 0;
@@ -29,11 +53,10 @@ body {
 }
 
 .text {
-    width: 50%;
     height: 250px;
     float: right;
     text-align: left;
-}
+} */
 
 @media screen and (max-width: 768px), screen and (max-width : 1350px) 
  {

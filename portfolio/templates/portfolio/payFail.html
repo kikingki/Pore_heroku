@@ -3,8 +3,9 @@
 
 {% block content %}
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700&display=swap');
-        body {
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700&display=swap');
+        html, body {
             font-family: 'Nanum Gothic', sans-serif;
         }
     h4 {
@@ -14,6 +15,15 @@
         text-align: center;
         margin-top: 8vh;
     }
+    .comment {
+        margin: 0 auto;
+        width : 750px;
+        padding: 10px;
+        border: 1px solid rgba(128, 128, 128, 0.623) ;
+    }
+    footer {
+        position: absolute;
+    }
 </style>
 <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
 <head>
@@ -22,12 +32,15 @@
 </head>
 <body>
     <div class="cancel">
-        <i class="far fa-sad-cry" style="font-size: 50px; color: red;"></i>
-        <h4><b>결제 실패!</b></h4>
-        <h5>다시 시도해주세요!</h5>
+        <i class="fas fa-exclamation-circle" style="font-size: 50px; color: red;"></i>
+        <br><br>
+        <h4><b>결제 실패!</b></h4><br>
+        <div class="comment">
+            <h5>주문/결제가 실패되어 주문을 완료하지 못했습니다.</h5>
+            <h5>죄송합니다. 다시 시도해주세요!</h5>
+        </div>
         <br>
-        <i class="fas fa-home" style="font-size: 30px;"></i>
-        <a href="{% url 'main' %}">HOME으로 돌아가기</a>
+        <a href="{% url 'main' %}"><i class="fas fa-home" style="font-size: 30px;"></i> HOME으로 돌아가기</a>
     </div>
 </body>
 {% endblock %}

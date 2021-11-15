@@ -13,13 +13,14 @@ body {
 }
 
 .detail p img {
-    max-width: 35vw;
-    height: 50vh;
+    /* max-width: 55vw; */
+    min-width: 50vw;
+    height: 60vh;
 }
 
 .detail iframe {
-    width: 35vw;
-    height: 50vh;
+    width: 50vw;
+    height: 60vh;
 }
 
 .banner {

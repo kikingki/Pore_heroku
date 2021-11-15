@@ -1,4 +1,10 @@
 @font-face {
+    font-family: 'GowunBatang-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunBatang-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
     font-family: 'GongGothicMedium';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/GongGothicMedium.woff') format('woff');
     font-weight: normal;
@@ -7,7 +13,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700&display=swap');
 body {
-    font-family: 'Nanum Gothic', sans-serif;
+    font-family: 'GowunBatang-Regular';
     background: #eee;
 }
 a:link { color: black; text-decoration: none;}
@@ -20,14 +26,14 @@ a:hover { color: black; text-decoration: underline;}
     margin:0px;
     padding:0px;
     font-family: 'GongGothicMedium';
-    font-size:18px;
+    font-size:17px;
     text-align:center;
 }
 
 .dropmenu ul{
     background: #ECE5E1;
     width: 100%;
-    height:100px;
+    height:50px;
     list-style:none;
     margin:0;
     padding:0;
@@ -37,8 +43,46 @@ a:hover { color: black; text-decoration: underline;}
 .menu{
     padding:0px;
     display: inline-block;
-    width: 190px;
+    width: 180px;
+    height: 80px;
 }
+
+.btn{
+    padding: 15px 100px;
+    margin:10px 4px;
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+    position: relative;
+    text-decoration: none;
+    display:inline-block;
+  }
+  .btn::before {
+    content: '';
+    position: absolute;
+    bottom: 0%;
+    left: 0px;
+    width: 100%;
+    height: 1px;
+    background: #D6002E;
+    display: block;
+    -webkit-transform-origin: right top;
+    -ms-transform-origin: right top;
+    transform-origin: right top;
+    -webkit-transform: scale(0, 1);
+    -ms-transform: scale(0, 1);
+    transform: scale(0, 1);
+    -webkit-transition: transform 0.4s cubic-bezier(1, 0, 0, 1);
+    transition: transform 0.4s cubic-bezier(1, 0, 0, 1)
+  }
+  .btn:hover::before {
+    -webkit-transform-origin: left top;
+    -ms-transform-origin: left top;
+    transform-origin: left top;
+    -webkit-transform: scale(1, 1);
+    -ms-transform: scale(1, 1);
+    transform: scale(1, 1)
+  }
 
 .log {
     padding:0px;
@@ -50,7 +94,7 @@ a:hover { color: black; text-decoration: underline;}
     background: #ECE5E1;
     color:black;
     display:block;
-    line-height:100px;
+    line-height:50px;
     margin:0px;
     padding:0px 25px;
     text-align:center;
@@ -94,7 +138,7 @@ a:hover { color: black; text-decoration: underline;}
 
 .dropmenu li ul a{
     display:block;
-    height:80px;
+    height:50px;
     font-size:14px;
     margin:0px;
     padding:0px 10px 0px 15px;
@@ -113,14 +157,16 @@ a:hover { color: black; text-decoration: underline;}
 }
 
 footer {
-    font-family: 'GongGothicMedium';
+    font-family: 'GowunBatang-Regular';
     background: #ECE5E1;
     left: 0;
-    width: 100%;
+    right: 0;
+    /* width: 100%; */
 	/* padding: 15px 0; */
 	text-align: center;
-    position:fixed; 
+    /* position:fixed;  */
     bottom: 0;
+    /* position: absolute; */
 }
 
 .navbar {
