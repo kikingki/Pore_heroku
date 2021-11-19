@@ -46,6 +46,14 @@
 <a href="{% url 'pfedit' portfolio.id %}"> 수정</a>
 <a href="{% url 'delete' portfolio.id %}"> 삭제</a>
 {% endif %}
+
+<h3>{{ portfolio.user_id.nickname }}님의 최근 포트폴리오</h3>
+<ul>
+{% for ps in portfolios %}
+  <li><a href="{% url 'pfdetail' ps.id %}">{{ ps.pf_title }}</a></li>
+{% endfor %}
+</ul>
+<p><a href="{% url 'userpage' portfolio.user_id.id %}">더보기</a></p>
 <br><br><br><br><br><br><br>
 {% endblock %}
 </body>

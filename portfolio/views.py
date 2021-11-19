@@ -143,7 +143,8 @@ def delete(request, id):
 # 포트폴리오 상세
 def pfdetail(request, id):
     portfolio = get_object_or_404(Portfolio, id=id)
-    return render(request, 'portfolio/pfdetail.html', {'portfolio':portfolio})
+    portfolios = Portfolio.objects.filter(user_id=portfolio.user_id).order_by('-pf_date')[:5]
+    return render(request, 'portfolio/pfdetail.html', {'portfolio':portfolio, 'portfolios':portfolios})
     
 # 회원 탈퇴
 def withdraw(request):
@@ -159,10 +160,6 @@ def user_delete(request):
         password_form = CheckPasswordForm(request.user)
 
     return render(request, 'portfolio/user_del.html', {'password_form':password_form})
-
-
-def chat(request):
-    return render(request, 'portfolio/chat.html')
 
 # 결제 내역
 def paylist(request):
@@ -207,7 +204,18 @@ def dealdelete(request, id):
 # 게시글 상세
 def dealdetail(request, id):
     deal = get_object_or_404(Business, id=id)
-    return render(request, 'portfolio/deal_detail.html', {'deal':deal})
+    deals = Business.objects.filter(u_id=deal.u_id).order_by('-deal_date')[:5]
+
+    # 등급 구현
+    pay = Business.objects.filter(status = "paid").filter(u_id = deal.u_id)
+    grade = ""
+    top = ""
+    if pay.count() > 2 and pay.count() < 7:
+        grade = "2"
+    elif pay.count() > 6:
+        grade = ""
+        top = "3"
+    return render(request, 'portfolio/deal_detail.html', {'deal':deal, 'deals':deals, 'grade':grade, 'top':top})
 
 def pfselect(request):
     # 불필요한 all(), values() 메소드 삭제

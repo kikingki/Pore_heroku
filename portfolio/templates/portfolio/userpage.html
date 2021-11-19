@@ -6,12 +6,6 @@
 <link rel="stylesheet" type="text/css" href="/static/portfolio/css/userpage.css">
 
 <div class="profile">
-    <div class="set">
-        <br><br><br>
-        <i class="far fa-comments" style="font-size: 50px;"></i>
-        <a href="{% url 'chat' %}"> <br>채팅하기</a>
-    </div>
-
     <div class="proimg">
         <!-- 프로필 이미지가 있으면 해당 이미지를 띄우고 없으면 기본이미지 띄움 -->
         {% if user.profile.profile_image %}
