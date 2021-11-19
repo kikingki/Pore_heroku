@@ -11,36 +11,37 @@
     <title>main</title>
     <link rel="stylesheet" type="text/css" href="{% static 'user/css/main.css' %}">
     <!-- 슬라이드 js -->
-    <script src="{% static 'user/js/main.js' %}"></script> 
 
 </head>
 <body>
 <!--슬라이드-->
 <div id="slide-container" style="display: inline-block;">
   <div class="slide_wrap">
-    <div class="slide_box">
-      <div class="slide_list cleatfix" style="width:2800px; transform: translate3d(-400px, 0px, 0px); transition: all 300ms ease 0s;">
-      <div class="slide_content slide01">
-        <p>1</p>
+    <div class="box-button" style="margin: 0 auto;">
+    <div class="slide_btn_box">
+        <button type="button" class="slide_btn_prev">prev</button>
+        <button type="button" class="slide_btn_next">next</button>
       </div>
-      <div class="slide_content slide02">
-        <p>2</p>
-      </div>
-      <div class="slide_content slide03">
-        <p>3</p>
-      </div>
-      <div class="slide_content slide04">
-        <p>4</p>
-      </div>
+      <div class="slide_box">
+        <div class="slide_list cleatfix" style="width:2800px; transform: translate3d(-400px, 0px, 0px); transition: all 300ms ease 0s;">
+        <div class="slide_content slide01">
+          <p>1</p>
+        </div>
+        <div class="slide_content slide02">
+          <p>2</p>
+        </div>
+        <div class="slide_content slide03">
+          <p>3</p>
+        </div>
+        <div class="slide_content slide04">
+          <p>4</p>
+        </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
 
-<div class="slide_btn_box">
-  <button type="button" class="slide_btn_prev">prev</button>
-  <button type="button" class="slide_btn_next">next</button>
-</div>
 <br>
 <br>
 <hr>
@@ -58,21 +59,69 @@
             <img src="{{ p.pf_attach.url }}" alt="포트폴리오 썸네일" style = "width : 200px; height:200px; margin : 10px auto"/>
           </a>
           {% else %}
-            <img src="{% static 'portfolio/img/이미지없음.jpg' %}"/>
+            <img src="{% static 'portfolio/img/이미지없음.jpg' %}"alt="포트폴리오 썸네일" style = "width : 200px; height:200px; margin : 10px auto"/>
           {% endif %}<br>
           <div class="card-body">
             <h5 class="card-title">{{p.pf_title}}</h5>
             <hr>
-            <p class="card-text">포트폴리오 설명이 들어갈 곳입니다</p>
-            <a href="{% url 'pfdetail' p.id %}" class="btn btn-primary" style="background-color: #d6002e; border-color: #d6002e;">More</a>
+            <a href="{% url 'pfdetail' p.id %}" style="color: #d6002e; border-color: #d6002e; float: right;">More ></a>
           </div>
         </div>
   </div>
 {% endfor %}
 </div>
+<script>
+  const slideList = document.querySelector('.slide_list'); // Slide parent dom
+const slideContents = document.querySelectorAll('.slide_content'); // each slide dom
+const slideBtnNext = document.querySelector('.slide_btn_next'); // next button
+const slideBtnPrev = document.querySelector('.slide_btn_prev'); // prev button
+const slideLen = slideContents.length; // slide length
+const slideWidth = 400; // slide width
+const slideSpeed = 300; // slide speed
+const startNum = 0;
+
+
+slideList.style.width = slideWidth * (slideLen + 2) + "px";
+
+
+let firstChild = slideList.firstElementChild;
+let lastChild = slideList.lastElementChild; 
+let clonedFirst = firstChild.cloneNode(true);
+let clonedLast = lastChild.cloneNode(true);
+
+slideList.appendChild(clonedFirst)
+slideList.insertBefore(clonedLast, slideList.firstElementChild);
+// curIndex와 curSlide
+slideList.style.transform = "translate3d(-" + (slideWidth * (startNum +1)) + "px, 0px, 0px";
+
+let curIndex = startNum;
+let curSlide = slideContents[curIndex];
+curSlide.classList.add('slide_activate')
+
+
+/** 다음 버튼 기능 구현 */
+slideBtnNext.addEventListener('click', function() {
+    if (curIndex <= slideLen - 1) {
+        slideList.style.transition = slideSpeed + "ms";
+        slideList.style.transform = "translate3d(-" + (slideWidth * (curIndex + 2)) + "px, 0px, 0px)";
+    }
+    /*if (curIndex === slideLen -1){
+        setTimeout(function(){
+            slideList.style.transition = "0ms";
+            slideList.style.transform = "translate3d(-" + slideWidth + "px, 0px, 0px)";
+        }, slideSpeed);
+        curIndex = -1;
+    }*/
+    /*--curSlide.classList.remove('slide_active');*/
+    curSlide = slideContents[++curIndex];
+    /*curSlide.classList.add('slide_active');*/
+});
+
+</script>
+<!--
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>-->
 
 </body>
 </html>

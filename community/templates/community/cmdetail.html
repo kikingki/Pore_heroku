@@ -16,27 +16,27 @@
 <body>
     <br>
     <div class="textbox-top">
-        <h2>{{community.post_title}}</h2>
-        <h5>{{ community.user_id.nickname }}</h5>
-        <p>{{ community.post_date }}</p>
-
+        <h4 style="padding-left: 10px; padding-top: 5px;">{{community.post_title}}</h4>
+        <hr>
+        <span style="float: left;"><h6 style="padding-left: 10px;">{{ community.user_id.nickname }}</h6> </span>
+        <span style="float: right;">{{ community.post_date }}</span>
+        <br>
         {% if community.user_id == user %}
-        <button type="submit">
-            <a href="{% url 'cmedit' community.id %}">수정</a></button>
-        <button type="submit"> 
-            <a href="{% url 'cmdelete' community.id %}">삭제</a></button>
+        <span style="float: right; margin-top:10px;">
+            <button type="submit">
+                <a href="{% url 'cmedit' community.id %}">수정</a></button>
+            <button type="submit"> 
+                <a href="{% url 'cmdelete' community.id %}">삭제</a></button>
+        </span>
         {% endif %}
-        <!-- <button type="submit">
-            <a href="{% url 'cmedit' community.id %}">수정</a>
-        </button>
-        <button type="submit">
-            <a href="{% url 'cmdelete' community.id %}">삭제</a>
-        </button> -->
+        <br>
+        <br>
     </div>
     <div class="textbox-bottom">
         <p>{{community.post_content | safe}}</p>
+    
     </div>
-    <hr>
+    
     <br>
     <div class="comments">
         {% for cmcomment in community.cmcomment.all %}
