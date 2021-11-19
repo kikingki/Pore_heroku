@@ -49,7 +49,7 @@
     {% for b in business %}
     <!-- 포트폴리오의 user_id와 현재 로그인 유저가 동일한 것만 보여줌 -->
     {% if b.u_id == user %}
-    <div class="deal" style="border: 1px solid black;">
+    <div class="deal" style="border: 2px solid #8c8b8b;">
         <br>
         <a style="font-size: 25px;" href="{% url 'dealdetail' b.id %}">
             {% if b.status == "ready" %}
@@ -73,7 +73,7 @@
 <h3 style="color: #D6002E;"><b>PORTFOLIO</b></h3>
 <div class="mypf">
     {% for p in portfolios %}
-    <div class="pf" style="border: 1px solid black;">
+    <div class="pf" style="border: 2px solid #8c8b8b;">
         <br>
         <a style="font-size: 25px;" href="{% url 'pfdetail' p.id %}"><b>{{p.pf_title}}</b></a>
         <p>{{ p.pf_date }}</p>

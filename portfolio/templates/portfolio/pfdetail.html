@@ -39,13 +39,15 @@
     <h1>{{portfolio.pf_title}}</h1>
     <img src="/static/portfolio/img/pore_logo2.png" alt="logo" height="50px" style="vertical-align:middle;">
     <span style="margin-top:20px;font-size:18px;"><a href="{% url 'userpage' portfolio.user_id.id %}"><b>{{portfolio.user_id.nickname }}</b></a> &emsp;&emsp;&emsp; {{ portfolio.pf_date }}</span>
+    <br>
+    {% if portfolio.user_id == user %}
+      <a href="{% url 'pfedit' portfolio.id %}"><i class="far fa-edit"></i>수정</a>
+      &nbsp;
+      <a href="{% url 'delete' portfolio.id %}"><i class="far fa-trash-alt"></i> 삭제</a>
+    {% endif %}
+    <hr>
     <p>{{portfolio.pf_content | safe}}</p>
 </div>
 <hr>
-{% if portfolio.user_id == user %}
-<a href="{% url 'pfedit' portfolio.id %}"> 수정</a>
-<a href="{% url 'delete' portfolio.id %}"> 삭제</a>
-{% endif %}
-<br><br><br><br><br><br><br>
 {% endblock %}
 </body>

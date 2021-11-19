@@ -71,7 +71,7 @@
 <div class="mypf" >
     {% for b in business %}
     {% if b.u_id == user %}
-    <div class="deal" style="border: 1px solid black;" OnClick=location.href="{% url 'dealdetail' b.id %}">
+    <div class="deal" style="border: 2px solid #8c8b8b;" OnClick=location.href="{% url 'dealdetail' b.id %}">
         <br>
         <a style="font-size: 25px;">
             {% if b.status == "ready" %}
@@ -95,7 +95,7 @@
 <h3 style="color: #D6002E;"><b>PORTFOLIO</b></h3>
 <div class="mypf">
     {% for p in portfolios %}
-    <div class="pf" style="border: 1px solid black;" OnClick=location.href="{% url 'pfdetail' p.id %}">
+    <div class="pf" style="border: 2px solid #8c8b8b;" OnClick=location.href="{% url 'pfdetail' p.id %}">
         <br>
         <a style="font-size: 25px;"><b>{{p.pf_title}}</b></a>
         <p>{{ p.pf_date }}</p>

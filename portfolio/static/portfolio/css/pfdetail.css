@@ -3,13 +3,13 @@
 
 body {
     text-align: center;
-    font-family: 'Nanum Gothic', sans-serif;
 }
 
 .detail {
     margin: auto;
     width: 50vw;
     min-height: 90vh;
+    margin-bottom: 100px;
 }
 
 .detail p img {

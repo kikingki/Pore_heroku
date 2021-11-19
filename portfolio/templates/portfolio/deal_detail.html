@@ -5,6 +5,7 @@
 {% block content %}
 <link rel="stylesheet" type="text/css" href="/static/portfolio/css/deal_detail.css">
 <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+<div class="info">
 <div class="gra">
     {% if user.profile.profile_image %}
         <img src="{{ user.profile.profile_image.url }}">
@@ -26,6 +27,18 @@
         {{deal.deal_title}}</h2>
     <h1>{{ deal.price|intcomma }}원</h1>
     <i class="far fa-clock" style="font-size: 20px;"></i><span> {{ deal.deal_date }}</span>
+    <br>
+    {% if deal.u_id == user %}
+    <a href="{% url 'dealedit' deal.id %}" style="font-size: 15px;"><i class="far fa-edit"></i> 수정</a>&emsp;
+    <a href="{% url 'dealdelete' deal.id %}" style="font-size: 15px;"><i class="far fa-trash-alt"></i> 삭제</a>
+    {% else %}
+    <i class="fas fa-money-bill-wave" style="font-size: 30px;"></i>
+    <a href="{% url 'kakaoPay' deal.id %}" style="font-size: 30px;"> 결제</a>&emsp;
+    <i class="far fa-comments" style="font-size: 30px;"></i>
+    <a href="{% url 'chat' %}" style="font-size: 30px;">채팅</a>
+    {% endif %}
+</div>
+</div>
 </div>
 <hr>
 <div class="all">
@@ -35,17 +48,5 @@
 </div>
 
 <br>
-<div style=" text-align: center;">
-<!-- 본인 포트폴리오만 수정, 삭제 띄움 -->
-{% if deal.u_id == user %}
-<a href="{% url 'dealedit' deal.id %}" style="font-size: 30px;"> 수정</a>&emsp;
-<a href="{% url 'dealdelete' deal.id %}" style="font-size: 30px;"> 삭제</a>
-{% else %}
-<i class="fas fa-money-bill-wave" style="font-size: 30px;"></i>
-<a href="{% url 'kakaoPay' deal.id %}" style="font-size: 30px;"> 결제</a>&emsp;
-<i class="far fa-comments" style="font-size: 30px;"></i>
-<a href="{% url 'chat' %}" style="font-size: 30px;">채팅</a>
-{% endif %}
-</div>
 <hr>
 {% endblock %}
