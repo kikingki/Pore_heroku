@@ -1,8 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700&display=swap');
+
+
 * {
     margin: 0px;
     padding: 0px;
     text-decoration: none;
-    font-family: 'GongGothicMedium';
+}
+body {
+    font-family: 'Nanum Gothic', sans-serif;
 }
 
 /*바탕색*/
@@ -106,7 +112,7 @@ label {
     background: none;
 }
 /*join버튼*/
-.btn {
+.btn1 {
     position:relative;
     bottom: 10px;
     /* top: 40px; */

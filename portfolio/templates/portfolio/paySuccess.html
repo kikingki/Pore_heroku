@@ -3,8 +3,28 @@
 
 {% block content %}
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700&display=swap');
-        body {
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700&display=swap');
+
+.btn1 {
+  text-decoration:none;
+  background-color: #f1eeee;
+  color: black;
+  font-size: 20px;
+  width: 300px;
+  margin: 15px 40px;
+  padding: 15px;
+  border: none;
+  display: inline-block;
+}
+
+.btn1:hover,
+.btn1.hover {
+  background-color: #D6002E;
+  color: #ffffff;
+}
+
+    html, body {
             font-family: 'Nanum Gothic', sans-serif;
         }
     h4 {
@@ -13,6 +33,16 @@
     .success {
         text-align: center;
         margin-top: 8vh;
+        margin: auto;
+    }
+    .comment {
+        margin: 0 auto;
+        width : 750px;
+        padding: 10px;
+        border: 1px solid rgba(128, 128, 128, 0.623) ;
+    }
+    footer {
+        position: absolute;
     }
 </style>
 <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
@@ -20,15 +50,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <body>
     <div class="success">
-        <i class="far fa-smile-wink" style="font-size: 50px; color: rgb(201, 66, 235);"></i>
+        <i class="far fa-smile-wink" style="font-size: 50px; color: rgb(237, 213, 243);"></i>
         <h4><b>결제 성공</b></h4>
         <br>
-        <i class="fas fa-receipt" style="font-size: 30px;"></i>
-        <a href="{% url 'paylist' %}">결제내역 보러가기</a><br>
-        <br>
-        <i class="fas fa-home" style="font-size: 30px;"></i>
-        <a href="{% url 'main' %}">HOME으로 돌아가기</a>
-        <br>
+        <a class="btn1" href="{% url 'paylist' %}"><i class="fas fa-receipt" style="font-size: 30px;"></i> 결제내역 보러가기</a>
+        <a class="btn1" href="{% url 'main' %}"><i class="fas fa-home" style="font-size: 30px;"></i> HOME으로 돌아가기</a>
     </div>
 </body>
 {% endblock %}

@@ -1,11 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700&display=swap');
+
 *{
     margin: 0px;
     padding: 0px;
     text-decoration: none;
-    font-family: 'GongGothicMedium';
-
 }
-
+body {
+    font-family: 'Nanum Gothic', sans-serif;
+    height: 100%;
+}
 .lo {
     margin:auto;text-align:center;
     height: 100%;
@@ -19,8 +23,9 @@
     padding: 30px, 20px;
     background-color: #ece5e1;
     text-align: center;
-    margin-top: 10vh;
-    margin-bottom: -15%;
+    margin-top: 15vh;
+    margin-bottom: 200px;
+    /* margin-bottom: -15%; */
     border-radius: 15px;
     border-color: #d6002e;
 }
@@ -68,7 +73,7 @@ table input {
     background: none;
 }
 /*로그인버튼*/
-.btn {
+.btn1 {
     position: relative;
     left: 40%;
     transform: translateX(-50%);
