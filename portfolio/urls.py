@@ -30,6 +30,5 @@ urlpatterns = [
     path('payFail/', views.payFail, name='payFail'),                    # 결제 오류
 
     path('guide/', views.guide, name='guide'),
-    path('chat/', views.chat, name='chat'),
     path('paylist/', views.paylist, name='paylist'),
 ]

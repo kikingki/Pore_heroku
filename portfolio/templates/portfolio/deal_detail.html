@@ -49,4 +49,24 @@
 
 <br>
 <hr>
+
+<div>
+    <!-- 유저 등급 -->
+    {% if grade %}
+    <img src="{% static 'portfolio/img/two.png' %}" width="50px" hegiht="50px">
+    {% elif top %}
+    <img src="{% static 'portfolio/img/three.png' %}" width="50px" hegiht="50px">
+    {% else %}
+    <img src="{% static 'portfolio/img/one.png' %}" width="50px" hegiht="50px">
+    {% endif %}
+
+    <h3>{{ deal.u_id.nickname }}님의 최근 거래글</h3>
+    <ul>
+        {% for ds in deals %}
+        <li><a href="{% url 'dealdetail' ds.id %}">{{ ds.deal_title }}</a></li>
+        {% endfor %}
+    </ul>
+    <p><a href="{% url 'userpage' deal.u_id.id %}">더보기</a></p>
+</div>
+
 {% endblock %}
