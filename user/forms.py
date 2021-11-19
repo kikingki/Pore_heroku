@@ -33,3 +33,5 @@ class CustomAuthenticationForm(AuthenticationForm):
         super(CustomAuthenticationForm, self).__init__(*args, **kwargs) # 꼭 있어야 한다!
         self.fields['username'].label = '아이디'    # 수정
         self.fields['password'].label = '비밀번호'
+    
+

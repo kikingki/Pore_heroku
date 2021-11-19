@@ -18,7 +18,7 @@
     <div class="textbox-top">
         <h2>{{ community.post_title }}</h2>
         <h5>{{ community.user_id.nickname }}</h5>
-        <p>{{ community.post_date }}</p>
+        <p>{{ community.post_date|date:'Y년 m월 d일 H:i'}}</p>
 
         {% if community.user_id == user %}
         <button type="submit">
@@ -40,7 +40,7 @@
     <br>
     <div class="comments">
         {% for cmcomment in community.cmcomment.all %}
-        <p>작성자: {{ cmcomment.user_id.nickname }} / 작성일시: {{ cmcomment.cm_date }}</p>
+        <p>작성자: {{ cmcomment.user_id.nickname }} / 작성일시: {{ cmcomment.cm_date|date:'Y년 m월 d일 H:i'}}</p>
         <p>{{cmcomment.cm_comment}}</p>
         <hr>
         {% endfor %}
@@ -50,7 +50,7 @@
                 <p>{{ form.as_p }}</p>
             </div>
             <div class="inp">
-                <input type="submit" value="submit" class="submit-button">
+                <input type="submit" value="댓글작성" class="submit-button">
             </div>
         </form>
     </div>
