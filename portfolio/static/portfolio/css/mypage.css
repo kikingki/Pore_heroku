@@ -63,6 +63,7 @@ hr {
 }
 
 .gra {
+    margin-top: 3px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -132,8 +133,8 @@ hr {
     .set {
         margin-top: -35px;
         float:left;
-        width: 20%;
-        height: 35vh;
+        width: 30%;
+        height: 37vh;
         /* background-color: white; */
         background: #eee;
     }
@@ -142,7 +143,7 @@ hr {
     }
     .procon {
         float:left;
-        width: 80%;
+        width: 70%;
         /* line-height: 40vh; */
         vertical-align: middle;
         height:30vh; 

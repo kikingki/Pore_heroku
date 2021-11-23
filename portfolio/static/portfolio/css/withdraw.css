@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700&display=swap');
 
 body {
-    font-family: 'Nanum Gothic', sans-serif;
+    font-family: 'Nanum Gothic', 'sans-serif';
 }
 
 .warning {
@@ -34,4 +34,7 @@ body {
     background-color: white;
     border-radius: 25px 25px 25px 25px;
     padding-top: 10px;
+}
+footer {
+    position: absolute;
 }

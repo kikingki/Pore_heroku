@@ -1,10 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700&display=swap');
 
 body {
-    font-family: 'Nanum Gothic', sans-serif;
     text-align: center;
 }
+table {
+    margin: 0 auto;
+    width: 300px;
+    border-top: 1px solid #615d5d36;
+    border-collapse: collapse;
+    text-align: center;
+  }
+td {
+    border-bottom: 0.5px solid #615d5d36;;
+    padding: 10px;
+  }
 .info {
     margin: 50px auto;
     height: 250px;
@@ -13,18 +21,24 @@ body {
 .gra {
     float: left;
     text-align: center;
-    width: 30%;
+    width: 40%;
+}
+.gra2 {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin-top: 10px;
 }
 .text {
     float: right;
     text-align: left;
-    width: 70%;
+    width: 60%;
 }
 
-.gra img {
+.grai {
     width:150px;
     height:150px;
-    border-radius: 50%; 
+    border-radius: 50%;
     border: 2px solid white;
 }
 /* .all {
@@ -47,19 +61,21 @@ body {
     text-align: center;
     margin: auto;
 }
-/* 
-.content {
-    display: inline-block;
-    left: 200px;
-    right: 0;
-    word-break:break-all;
+.bt {
+    width: 150px;
+    text-align: center;
+    justify-content: center;
+    margin: 5px auto;
+    color: white;
+    background-color: #d3d3d3;
+    border: 5px solid #d3d3d3;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
 }
-
-.text {
-    height: 250px;
-    float: right;
-    text-align: left;
-} */
+.recent {
+    margin-bottom: 20px;
+}
 @media screen and (max-width: 768px) 
 {
     .gra {

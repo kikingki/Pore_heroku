@@ -13,7 +13,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700&display=swap');
 body {
-    font-family: 'Nanum Gothic', sans-serif;
+    font-family: 'Nanum Gothic', 'sans-serif';
     background: #eee;
 }
 a:link { color: black; text-decoration: none;}
@@ -161,6 +161,7 @@ footer {
     background: #ECE5E1;
     left: 0;
     right: 0;
+    font-weight: 500;
     /* width: 100%; */
 	/* padding: 15px 0; */
 	text-align: center;

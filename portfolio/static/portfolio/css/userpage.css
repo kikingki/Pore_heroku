@@ -64,6 +64,7 @@ hr {
 }
 
 .gra {
+    margin-top: 3px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -129,12 +130,13 @@ hr {
 .paging {
     margin-bottom: 80px;
 }
-.chat {
+/* .chat {
     display:scroll;
     position:fixed;
     bottom:100px;
     right:10px;
-}
+} */
+
 @media screen and (max-width: 768px) 
  {
     .set {
@@ -171,10 +173,7 @@ hr {
         text-align: center;
         margin-right: 0%;
     }
-    .chat {
-        display:scroll;
-        position:fixed;
-        bottom:80px;
-        left:150px;
+    .gra {
+        text-align: center;
     }
  }
