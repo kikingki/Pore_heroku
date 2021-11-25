@@ -25,6 +25,7 @@ hr {
     background-color: #ece0d9;
     width: 80%;
     margin: 0 auto;
+    padding-bottom: 30px;
 }
 
 .textbox-bottom {
@@ -73,3 +74,7 @@ hr {
     border-color: #eee;
     color: #eee;
 }
+
+footer {
+    position: absolute;
+  }

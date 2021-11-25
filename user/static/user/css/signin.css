@@ -7,7 +7,7 @@
     text-decoration: none;
 }
 body {
-    font-family: 'Nanum Gothic', sans-serif;
+   
     height: 100%;
 }
 .lo {
@@ -19,7 +19,7 @@ body {
 .loginForm {
     display:inline-block;
     width: 300px;
-    height: 300px;
+    height: 380px;
     padding: 30px, 20px;
     background-color: #ece5e1;
     text-align: center;

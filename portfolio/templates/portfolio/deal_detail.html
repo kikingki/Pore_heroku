@@ -33,9 +33,7 @@
     <a href="{% url 'dealdelete' deal.id %}" style="font-size: 15px;"><i class="far fa-trash-alt"></i> 삭제</a>
     {% else %}
     <i class="fas fa-money-bill-wave" style="font-size: 30px;"></i>
-    <a href="{% url 'kakaoPay' deal.id %}" style="font-size: 30px;"> 결제</a>&emsp;
-    <i class="far fa-comments" style="font-size: 30px;"></i>
-    <a href="{% url 'chat' %}" style="font-size: 30px;">채팅</a>
+    <a href="{% url 'pay' deal.id %}" style="font-size: 30px;"> 결제</a>&emsp;
     {% endif %}
 </div>
 </div>

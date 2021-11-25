@@ -16,41 +16,30 @@
 <body>
     <br>
     <div class="textbox-top">
-<<<<<<< HEAD
         <h4 style="padding-left: 10px; padding-top: 5px;">{{community.post_title}}</h4>
         <hr>
         <span style="float: left;"><h6 style="padding-left: 10px;">{{ community.user_id.nickname }}</h6> </span>
         <span style="float: right;">{{ community.post_date }}</span>
         <br>
-=======
-        <h2>{{ community.post_title }}</h2>
-        <h5>{{ community.user_id.nickname }}</h5>
-        <p>{{ community.post_date }}</p>
-
->>>>>>> 7d63340fcda1658ef2e376eead9128c4f7521123
         {% if community.user_id == user %}
-        <span style="float: right; margin-top:10px;">
+        <span style="float: right;">
             <button type="submit">
                 <a href="{% url 'cmedit' community.id %}">수정</a></button>
             <button type="submit"> 
                 <a href="{% url 'cmdelete' community.id %}">삭제</a></button>
         </span>
         {% endif %}
-<<<<<<< HEAD
-        <br>
-        <br>
-=======
-        <!--좋아요 버튼-->
-        <button type="submit" class="like" name="{{ community.id }}">
-            <i class="fas fa-heart"></i>
-            <a id="count-{{ community.id }}">
-            좋아요&nbsp;{{ community.likes_user.all.count }}개</a>
-        </button>
->>>>>>> 7d63340fcda1658ef2e376eead9128c4f7521123
+
+
     </div>
     <div class="textbox-bottom">
         <p>{{community.post_content | safe}}</p>
-    
+                <!--좋아요 버튼-->
+                <button type="submit" class="like" name="{{ community.id }}" style="margin: 0 auto; display: block;">
+                    <i class="fas fa-heart"></i>
+                    <a id="count-{{ community.id }}">
+                    좋아요&nbsp;{{ community.likes_user.all.count }}개</a>
+                </button>
     </div>
     
     <br>

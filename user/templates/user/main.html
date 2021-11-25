@@ -51,7 +51,7 @@
   <div class ="container">
         <div class="card" style=" width : 250px; height : 400px;">
           <div class="card-header">
-          (이곳에 작성자 이름이 나오도록)
+          {{ p.user_id.nickname }}
           </div>
           {% if p.pf_attach %}
           <a href="{% url 'pfdetail' p.id %}"></a>
