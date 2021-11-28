@@ -16,15 +16,18 @@
 <body>
     <br>
     <div class="textbox-top">
+
         <h2>{{ community.post_title }}</h2>
         <h5>{{ community.user_id.nickname }}</h5>
         <p>{{ community.post_date }}</p>
 
         {% if community.user_id == user %}
-        <button type="submit">
-            <a href="{% url 'cmedit' community.id %}">수정</a></button>
-        <button type="submit"> 
-            <a href="{% url 'cmdelete' community.id %}">삭제</a></button>
+        <span style="float: right; margin-top:10px;">
+            <button type="submit">
+                <a href="{% url 'cmedit' community.id %}">수정</a></button>
+            <button type="submit"> 
+                <a href="{% url 'cmdelete' community.id %}">삭제</a></button>
+        </span>
         {% endif %}
         <!--좋아요 버튼-->
         <button type="submit" class="like" name="{{ community.id }}">
@@ -35,8 +38,9 @@
     </div>
     <div class="textbox-bottom">
         <p>{{community.post_content | safe}}</p>
+    
     </div>
-    <hr>
+    
     <br>
     <div class="comments">
         {% for cmcomment in community.cmcomment.all %}

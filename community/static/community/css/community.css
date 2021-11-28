@@ -17,17 +17,15 @@ body {
     background-color: #D6002E;
     border: none;
     color: white;
-    margin-bottom: 30px;
-    margin-right: 30px;
-    font-weight: 20px;
-    padding : 10px;
+    padding : 5px;
     border-radius: 5px;
+    float: right;
 }
 
 .table {
     border : 1px solid gray;
-    width: 80%;
-    margin: auto;
+    margin: 0 auto;
+    margin-top: 45px;
 }
 
 td {
@@ -36,4 +34,11 @@ td {
 
 .ths {
     text-align: center;
+}
+u.categorys {
+    text-decoration: underline;
+}
+
+.container {
+    margin: 0 auto;
 }

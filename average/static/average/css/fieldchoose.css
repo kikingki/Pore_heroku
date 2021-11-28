@@ -1,31 +1,26 @@
 /* Global CSS that are applied for all screen sizes */
 body {
   background: #eee;
-  font-family: 'GongGothicMedium';
   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/GongGothicMedium.woff') format('woff');
   font-weight: normal;
   font-style: normal;
-  
 }
 
-@import url(https://fonts.googleapis.com/css?family=Raleway:500,900);
 .figure{
   margin-bottom: 80px;
 }
 figure.snip1432 {
-font-family: 'Nanum Gothic', sans-serif;
-
 color: #fff; 
 position: relative;
 overflow: hidden;
 margin: 10px;
 min-width: 230px;
-max-width: 315px;
-width: 100%;/*
-background: #000000;*/
+max-width: 250px;
+width: 80%;
 color: #D6002E;
 text-align: right;
 }
+
 figure.snip1432 * {
 -webkit-box-sizing: border-box;
 box-sizing: border-box;
@@ -51,24 +46,24 @@ overflow: hidden;
 width: 100%;
 position: relative;
 }
-figure.snip1432 h2,
-figure.snip1432 h3 {
+figure.snip1432 h3,
+figure.snip1432 h4 {
 margin: 0;
 position: absolute;
 left: 0;
 padding: 0 30px;
 text-transform: uppercase;
 }
-figure.snip1432 h2 {
+figure.snip1432 h3 {
 font-weight: 900;
 top: 0;
 }
-figure.snip1432 h3 {
+figure.snip1432 h4 {
 font-size: 1em;
 bottom: 0;
 font-weight: 500;
 }
-figure.snip1432 h3:nth-of-type(2) {
+figure.snip1432 h4:nth-of-type(2) {
 opacity: 0;
 -webkit-transform: translateY(150%);
 transform: translateY(150%);
@@ -86,14 +81,14 @@ opacity: 0.3;
 -webkit-filter: grayscale(100%);
 filter: grayscale(100%);
 }
-figure.snip1432:hover figcaption h3:first-of-type,
-figure.snip1432.hover figcaption h3:first-of-type {
+figure.snip1432:hover figcaption h4:first-of-type,
+figure.snip1432.hover figcaption h4:first-of-type {
 -webkit-transform: translateY(150%);
 transform: translateY(150%);
 opacity: 0;
 }
-figure.snip1432:hover figcaption h3:nth-of-type(2),
-figure.snip1432.hover figcaption h3:nth-of-type(2) {
+figure.snip1432:hover figcaption h4:nth-of-type(2),
+figure.snip1432.hover figcaption h4:nth-of-type(2) {
 opacity: 1;
 -webkit-transform: translateY(0%);
 transform: translateY(0%);
@@ -107,4 +102,7 @@ margin-right: 40px;
 .img{
 width : 150px;
 height : 150px;
+}
+footer {
+  position: absolute;
 }
