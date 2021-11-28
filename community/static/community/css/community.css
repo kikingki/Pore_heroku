@@ -6,11 +6,10 @@ h1 {
 
 body {
     background: #eee;
-    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-    font-size: 14px;
     color: #000;
     margin: 0;
     padding: 0;
+    min-height: 650px;
 }
 
 .button {
@@ -23,9 +22,11 @@ body {
 }
 
 .table {
+    font-size: 14px;
     border : 1px solid gray;
     margin: 0 auto;
     margin-top: 45px;
+    
 }
 
 td {
@@ -41,4 +42,15 @@ u.categorys {
 
 .container {
     margin: 0 auto;
+}
+footer {
+    position: absolute;
+} 
+@media screen and (max-width: 768px), screen and (max-width : 1400px) {
+    .text-center {
+        margin-bottom: 50px;
+    }
+    footer {
+        position: fixed;
+    } 
 }

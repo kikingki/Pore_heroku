@@ -43,11 +43,10 @@
     {% if portfolio.user_id == user %}
       <a href="{% url 'pfedit' portfolio.id %}"><i class="far fa-edit"></i>수정</a>
       &nbsp;
-      <a href="{% url 'delete' portfolio.id %}"><i class="far fa-trash-alt"></i> 삭제</a>
+      <a href="{% url 'delete' portfolio.id %}"><i class="far fa-trash-alt"></i>삭제</a>
     {% endif %}
     <hr>
     <p>{{portfolio.pf_content | safe}}</p>
 </div>
 <hr>
 {% endblock %}
-</body>

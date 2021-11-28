@@ -4,17 +4,6 @@ body {
     height: 100%;
 }
 
-body {
-    background: #eee;
-    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-    font-size: 14px;
-    color: #000;
-    margin: 0;
-    padding: 0;
-}
-
-/*슬라이드*/
-
 #slide-container {
     width: 1000px;
     margin: auto;
@@ -40,7 +29,7 @@ body {
     display: table;
     float: left;
     width: 400px; 
-    height: 400px;
+    height: 300px;
 }
 
 .slide_content > p{
@@ -49,6 +38,11 @@ body {
     text-align: center;
     font-size: 100px;
     font-weight: bold;
+}
+
+.slide_content img {
+    width: 400px; 
+    height: 300px;
 }
 
 .slide01 {
@@ -101,7 +95,8 @@ h2 {
     flex-wrap: wrap;
     margin-left: 170px;
     margin-right: 100px;
-    
+    margin-bottom: 30px;
+    min-width: 500px;
 }
 
 .container {

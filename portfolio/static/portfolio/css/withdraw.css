@@ -25,6 +25,11 @@ body {
     border-radius: 25px 25px 25px 25px;
     padding-top: 10px;
 }
+.yes:hover,
+.yes.hover {
+    background-color: #D6002E;
+    color: #ffffff;
+  }
 
 .no {
     display: inline-block;
@@ -35,6 +40,12 @@ body {
     border-radius: 25px 25px 25px 25px;
     padding-top: 10px;
 }
+.no:hover,
+.no.hover {
+    background-color: #D6002E;
+    color: #ffffff;
+  }
+
 footer {
     position: absolute;
 }

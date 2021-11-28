@@ -24,16 +24,24 @@
       <div class="slide_box">
         <div class="slide_list cleatfix" style="width:2800px; transform: translate3d(-400px, 0px, 0px); transition: all 300ms ease 0s;">
         <div class="slide_content slide01">
-          <p>1</p>
+          <a href="https://linkareer.com/activity/72450">
+            <img src="https://res.cloudinary.com/linkareer/image/fetch/f_auto/https://api.linkareer.com/attachments/52409">
+          </a>
         </div>
         <div class="slide_content slide02">
-          <p>2</p>
+          <a href="https://linkareer.com/activity/71031">
+            <img src="https://res.cloudinary.com/linkareer/image/fetch/f_auto/https://api.linkareer.com/attachments/53572">
+          </a>
         </div>
         <div class="slide_content slide03">
-          <p>3</p>
+          <a href="https://www.campuspick.com/activity/view?id=15775">
+            <img src="https://cf-cpi.campuspick.com/activity/1637650607549550.jpg">
+          </a>
         </div>
         <div class="slide_content slide04">
-          <p>4</p>
+          <a href="https://www.campuspick.com/activity/view?id=15731">
+            <img src="https://cf-cpi.campuspick.com/activity/1637223476393810.jpg">
+          </a>
         </div>
         </div>
       </div>
@@ -51,7 +59,7 @@
   <div class ="container">
         <div class="card" style=" width : 250px; height : 400px;">
           <div class="card-header">
-          (이곳에 작성자 이름이 나오도록)
+          {{ p.user_id.nickname }}
           </div>
           {% if p.pf_attach %}
           <a href="{% url 'pfdetail' p.id %}"></a>

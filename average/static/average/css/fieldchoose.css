@@ -103,6 +103,7 @@ margin-right: 40px;
 width : 150px;
 height : 150px;
 }
+
 footer {
-  position: absolute;
+  position: fixed;
 }

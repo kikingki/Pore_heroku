@@ -14,7 +14,7 @@ def community(request, com_id):
     # filter(), order_by() 사용
     communitys = Community.objects.filter(com_id=categorys).order_by('-post_date')
     # 5~10개 사이로 페이지를 나누는 게 좋을 것 같음.
-    paginator = Paginator(communitys, 13)
+    paginator = Paginator(communitys, 10)
     page = request.GET.get('page')
     # posts라는 객체를 따로 만들지 않고 communitys에 다시 대입해주면 됨.
     communitys = paginator.get_page(page)

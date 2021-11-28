@@ -15,6 +15,9 @@
 body {
     font-family: 'Nanum Gothic';
     background: #eee;
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunBatang-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 a:link { color: black; text-decoration: none;}
 a:visited { color: black; text-decoration: none;}
@@ -171,9 +174,7 @@ footer {
     /* width: 100%; */
 	/* padding: 15px 0; */
 	text-align: center;
-    /* position:fixed;  */
     bottom: 0;
-    /* position: absolute; */
 }
 
 .navbar {
@@ -187,7 +188,6 @@ footer {
         display:block;
         text-align:left;
         color: black;
-        font-family: 'GongGothicMedium';
     }
    .dropmenu {
         display:none;
