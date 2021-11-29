@@ -27,3 +27,5 @@ class CmCommentForm(forms.ModelForm):
         labels = {
             'cm_comment': '댓글',
         }
+
+from django import forms

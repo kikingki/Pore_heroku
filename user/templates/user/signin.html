@@ -6,14 +6,15 @@
     <link rel="stylesheet" type="text/css" href="{% static 'user/css/signin.css' %}">
     <div class="lo">
         <form action="{% url 'signin' %}" method="POST" class="loginForm">
-            {% csrf_token %}
             <h2>Login</h2>
+            <!--이거 form.as_table에서 form.as_p로 바꿔봤습니다. required 없애려고-->
             <table>
-                {{ form.as_table }}
+                {% csrf_token %}
+                {{ form.as_p }}
             </table>
     <br>
             <input type="submit" class="btn1" value="LOG IN">
-    
+
             <div class="buttomText">
                 회원이 아니신가요? <a href="{% url 'signup' %}">회원가입하기</a>
             </div>

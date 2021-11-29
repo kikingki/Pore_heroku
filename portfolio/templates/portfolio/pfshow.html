@@ -16,6 +16,12 @@
 <body>
     <br>
     <h1>{{ field }}</h1>
+    <!--포트폴리오 제목 검색창-->
+    <form action="" method="GET">
+        <input type="text" name="q" value="{{ q }}"/>
+        <input type="submit" value="검색" />
+    </form>
+    <br>
     <div class="all">
         {% for p in portfolios %}
         {% if p.f_id == field %}
