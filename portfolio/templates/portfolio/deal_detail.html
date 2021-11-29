@@ -43,7 +43,8 @@
     {% if deal.u_id == user %}
     <a href="{% url 'dealedit' deal.id %}" style="font-size: 15px;"><i class="far fa-edit"></i> 수정</a>&emsp;
     <a href="{% url 'dealdelete' deal.id %}" style="font-size: 15px;"><i class="far fa-trash-alt"></i> 삭제</a>
-    {% else %}
+    {% endif %}
+    {% if deal.status == "ready" and deal.u_id != user %}
     <i class="fas fa-money-bill-wave" style="font-size: 30px;"></i>
     <a href="{% url 'pay' deal.id %}" style="font-size: 30px;"> 결제</a>&emsp;
     {% endif %}
