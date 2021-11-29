@@ -16,7 +16,10 @@ from .forms import PortfolioForm, CheckPasswordForm, ProfileForm, BusinessForm, 
 def pfshow(request, field_id):
     portfolios = Portfolio.objects.all().order_by('-pf_date')
     field = get_object_or_404(Field, pk=field_id)
-    return render(request, 'portfolio/pfshow.html', {'field':field,'portfolios':portfolios})
+    q = request.GET.get('q', '')
+    if q:
+        portfolios = portfolios.filter(pf_title = q)
+    return render(request, 'portfolio/pfshow.html', {'field': field,'portfolios': portfolios, 'q': q})
 
 def mypage(request):
     # 로그인 상태가 아닐 경우 signin 페이지 이동

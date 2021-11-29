@@ -6,28 +6,27 @@ h1 {
 
 body {
     background: #eee;
-    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-    font-size: 14px;
     color: #000;
     margin: 0;
     padding: 0;
+    min-height: 650px;
 }
 
 .button {
     background-color: #D6002E;
     border: none;
     color: white;
-    margin-bottom: 30px;
-    margin-right: 30px;
-    font-weight: 20px;
-    padding : 10px;
+    padding : 5px;
     border-radius: 5px;
+    float: right;
 }
 
 .table {
+    font-size: 14px;
     border : 1px solid gray;
-    width: 80%;
-    margin: auto;
+    margin: 0 auto;
+    margin-top: 45px;
+    
 }
 
 td {
@@ -36,4 +35,27 @@ td {
 
 .ths {
     text-align: center;
+}
+u.categorys {
+    text-decoration: underline;
+}
+
+.container {
+    margin: 0 auto;
+}
+footer {
+    position: absolute;
+} 
+@media screen and (max-width: 768px), screen and (max-width : 1400px) {
+    .text-center {
+        margin-bottom: 50px;
+    }
+    footer {
+        position: fixed;
+    } 
+}
+
+.search {
+    margin-top: 10px;
+    margin-left: 30px;
 }

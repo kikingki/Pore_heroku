@@ -1,72 +1,62 @@
 {% extends 'portfolio/base.html' %}
 {% load static %}
-
 {% block content %}
-<!DOCTYPE html>
-<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
     <link rel="stylesheet" type="text/css" href="{% static 'community/css/community.css' %}">
-    <!-- 합쳐지고 최소화된 최신 CSS -->
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"> -->
 
     <title>커뮤니티</title>
 </head>
-<body>
-    <div class="ccontainer">
+    <div class="container">
+        <h4 style="float: left; margin-top: 20px;"><u class="categorys">{{ categorys }}</u></h4>
+        <div class="button" style="margin-top: 20px;">
+            <a href="{% url 'cmwrite' %}">
+                <button type="button" class="button">글작성</button>
+            </a>
+        </div>
         <br>
-        <div style="width: 60%; margin-left: 20px; float: left;">
-            <h1>{{ categorys }}</h1>
-            </div>
-            <div style="float: right; margin-right: 45px; margin-top: 10px;">
-                <a href="{% url 'cmwrite' %}">
-                    <button type="button" class="button" style="margin-right: 150px;">글작성</button>
-                </a>
-            </div>
-
-        <div class="container">
-
-            </div>
-            <table style= "width : 80% " class="table">
-                <thead>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th style="text-align: center;">제목</th>
+                    <th style="text-align: center;">작성자</th>
+                    <th style="text-align: center;">날짜</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for c in communitys %} <!--views에 설정한 거-->
+                {% if c.com_id == categorys %} <!--views에서 get_object 설정한 거-->
                     <tr>
-                        <th style="text-align: center;">제목</th>
-                        <th style="text-align: center;">작성자</th>
-                        <th style="text-align: center;">날짜</th>
+                        <td><a href="{% url 'cmdetail' c.id %}">{{ c.post_title|truncatechars:20 }}</a></td>
+                        <td>{{ c.user_id.nickname }}</td>
+                        <td>{{ c.post_date | date:'Y년 m월 d일 H:i'}}</td>                   
                     </tr>
-                </thead>
-                <tbody>
-                    {% for c in communitys %} <!--views에 설정한 거-->
-                    {% if c.com_id == categorys %} <!--views에서 get_object 설정한 거-->
-                        <tr>
-                            <td><a href="{% url 'cmdetail' c.id %}">{{ c.post_title|truncatechars:20 }}</a></td>
-                            <td>{{ c.user_id.nickname }}</td>
-                            <td>{{ c.post_date}}</td>                   
-                        </tr>
-                    {% endif %}
-                    {% endfor %}
-                </tbody>
-            </table>
-        </div>
-        <br>
-        <div class="text-center">
-            {% if communitys.has_previous %}
-                <a href="?page=1"><i class="fas fa-angle-double-left"></i></a>
-                <a href="?page={{ communitys.previous_page_number }}"><i class="fas fa-angle-left"></i></a>
-            {% endif %}
-            
-            <span>{{ communitys.number }}</span>
-            <span>of</span>
-            <span>{{ communitys.paginator.num_pages }}</span>
-            {% if communitys.has_next %}
-                <a href="?page={{ communitys.next_page_number }}"><i class="fas fa-angle-right"></i></a>
-                <a href="?page={{ communitys.paginator.num_pages }}"><i class="fas fa-angle-double-right"></i></a>
-            {% endif %}
-        </div>
-    </div><br><br><br>
+                {% endif %}
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <br>
+    <div class="text-center">
+        {% if communitys.has_previous %}
+            <a href="?page=1"><i class="fas fa-angle-double-left"></i></a>
+            <a href="?page={{ communitys.previous_page_number }}"><i class="fas fa-angle-left"></i></a>
+        {% endif %}
+        
+        <span>{{ communitys.number }}</span>
+        <span>of</span>
+        <span>{{ communitys.paginator.num_pages }}</span>
+        {% if communitys.has_next %}
+            <a href="?page={{ communitys.next_page_number }}"><i class="fas fa-angle-right"></i></a>
+            <a href="?page={{ communitys.paginator.num_pages }}"><i class="fas fa-angle-double-right"></i></a>
+        {% endif %}
+        <form class="search" action="" method="GET">
+            <input type="text" name="q" value="{{ q }}"/>
+            <input type="submit" value="검색" />
+        </form>
+    </div>
+
+    <br>
     {% endblock %} 
-</body>
-</html>

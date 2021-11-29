@@ -6,27 +6,30 @@
 <link rel="stylesheet" type="text/css" href="/static/portfolio/css/userpage.css">
 
 <div class="profile">
-    <div class="proimg">
-        <!-- 프로필 이미지가 있으면 해당 이미지를 띄우고 없으면 기본이미지 띄움 -->
+       <div class="proimg">
+        <div class="proimg2">
+                    <!-- 프로필 이미지가 있으면 해당 이미지를 띄우고 없으면 기본이미지 띄움 -->
         {% if user.profile.profile_image %}
         <img src="{{ user.profile.profile_image.url }}">
         {% else %}
         <img src="{% static 'portfolio/img/기본프로필.jpg' %}">
         {% endif %}
+        </div>
+        <div class="gra">
+            <!-- 프로필 정보란 -->
+            {% if grade %}
+                <img src="{% static 'portfolio/img/two.png' %}" width="50px" hegiht="50px">
+            {% elif top %}
+                <img src="{% static 'portfolio/img/three.png' %}" width="50px" hegiht="50px">
+            {% else %}
+                <img src="{% static 'portfolio/img/one.png' %}" width="50px" hegiht="50px">
+                <!-- <p>아마추어의 경우 PO;RE 거래횟수가 3회 이상이 되면 전문가로 분류됩니다.</p> -->
+            {% endif %}
+        <h2><b>{{ user.nickname }}</b></h2>
+        </div>
     </div>
     <div class="procon">
-        <div class="gra">
-        <!-- 프로필 정보란 -->
-        {% if grade %}
-            <img src="{% static 'portfolio/img/two.png' %}" width="50px" hegiht="50px">
-        {% elif top %}
-            <img src="{% static 'portfolio/img/three.png' %}" width="50px" hegiht="50px">
-        {% else %}
-            <img src="{% static 'portfolio/img/one.png' %}" width="50px" hegiht="50px">
-            <!-- <p>아마추어의 경우 PO;RE 거래횟수가 3회 이상이 되면 전문가로 분류됩니다.</p> -->
-        {% endif %}
-        <h1><b>{{ user.nickname }}</b></h1>
-        </div>
+        <br>
         <h4>직업: {{ user.field_id.field_name }}</h4>
         <h4>이메일: {{ user.profile.email }}</h4>
         <h4>연락처: {{ user.profile.phone_number }}</h4>
@@ -41,7 +44,7 @@
     {% for b in business %}
     <!-- 포트폴리오의 user_id와 현재 로그인 유저가 동일한 것만 보여줌 -->
     {% if b.u_id == user %}
-    <div class="deal" style="border: 1px solid black;">
+    <div class="deal" style="border: 2px solid #8c8b8b;">
         <br>
         <a style="font-size: 25px;" href="{% url 'dealdetail' b.id %}">
             {% if b.status == "ready" %}
@@ -61,10 +64,11 @@
 <br>
 <hr>
 <!-- 포트폴리오 -->
+<br>
 <h3 style="color: #D6002E;"><b>PORTFOLIO</b></h3>
 <div class="mypf">
     {% for p in portfolios %}
-    <div class="pf" style="border: 1px solid black;">
+    <div class="pf" style="border: 2px solid #8c8b8b;">
         <br>
         <a style="font-size: 25px;" href="{% url 'pfdetail' p.id %}"><b>{{p.pf_title}}</b></a>
         <p>{{ p.pf_date }}</p>
@@ -97,5 +101,5 @@
     {% endif %}
     </div>
     </div>
-
+    
 {% endblock %}

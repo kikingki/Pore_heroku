@@ -21,7 +21,7 @@
 </head>
 <link rel="stylesheet" type="text/css" href="/static/portfolio/css/pfdetail.css">
 
-<body onload = "showImage()">
+<!-- <body onload = "showImage()">
 <div class="banner">
     <span>
         <a href="https://www.jungle.co.kr/contest" target="_blank">
@@ -33,27 +33,35 @@
         <a href="https://www.jungle.co.kr/contest/202575" target="_blank">
         <img src="https://www.jungle.co.kr/image/5e0875724c17ba6ace8a6be8" height="450px" width="300px"></a>
     </span>
-  </div>
+  </div> -->
 <div class="detail">
     <br>
     <h1>{{portfolio.pf_title}}</h1>
     <img src="/static/portfolio/img/pore_logo2.png" alt="logo" height="50px" style="vertical-align:middle;">
     <span style="margin-top:20px;font-size:18px;"><a href="{% url 'userpage' portfolio.user_id.id %}"><b>{{portfolio.user_id.nickname }}</b></a> &emsp;&emsp;&emsp; {{ portfolio.pf_date }}</span>
+    <br>
+    {% if portfolio.user_id == user %}
+      <a href="{% url 'pfedit' portfolio.id %}"><i class="far fa-edit"></i>수정</a>
+      &nbsp;
+      <a href="{% url 'delete' portfolio.id %}"><i class="far fa-trash-alt"></i>삭제</a>
+    {% endif %}
+    <hr>
     <p>{{portfolio.pf_content | safe}}</p>
 </div>
-<hr>
-{% if portfolio.user_id == user %}
-<a href="{% url 'pfedit' portfolio.id %}"> 수정</a>
-<a href="{% url 'delete' portfolio.id %}"> 삭제</a>
-{% endif %}
 
-<h3>{{ portfolio.user_id.nickname }}님의 최근 포트폴리오</h3>
-<ul>
-{% for ps in portfolios %}
-  <li><a href="{% url 'pfdetail' ps.id %}">{{ ps.pf_title }}</a></li>
-{% endfor %}
-</ul>
-<p><a href="{% url 'userpage' portfolio.user_id.id %}">더보기</a></p>
-<br><br><br><br><br><br><br>
+<hr>
+<div class="recent">
+    <h3>{{ portfolio.user_id.nickname }}님의 최근 포트폴리오</h3>
+    <table>
+    {% for ps in portfolios %}
+    <tr>
+        <td><a href="{% url 'pfdetail' ps.id %}">{{ ps.pf_title }}</a></td>
+    </tr>
+    {% endfor %}
+    </table>
+</div>
+<div class="bt">
+    <a href="{% url 'userpage' portfolio.user_id.id %}">더보기</a>
+</div>
+<br>
 {% endblock %}
-</body>

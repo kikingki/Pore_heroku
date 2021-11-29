@@ -15,12 +15,12 @@
             buyer_email: '{{ user.profile.email }}',
             buyer_name: '{{ user.name }}',
             buyer_tel: '{{ user.profile.phone_number }}',
-            m_redirect_url: 'http://127.0.0.1:8000/portfolio/paySuccess/{{deal.id}}'
-            // m_redirect_url: 'https://pore-likelion.herokuapp.com/portfolio/paySuccess'
+            // m_redirect_url: 'http://127.0.0.1:8000/portfolio/paySuccess/{{deal.id}}'
+            m_redirect_url: 'https://pore-likelion.herokuapp.com/portfolio/paySuccess'
         }, 
         function (rsp) {
             if (rsp.success) {
-                var url = 'http://127.0.0.1:8000/portfolio/paySuccess/{{deal.id}}';
+                var url = 'https://pore-likelion.herokuapp.com/portfolio/paySuccess/{{deal.id}}';
                 var msg = '결제가 완료되었습니다.';
                 msg += '고유ID : ' + rsp.imp_uid;
                 msg += '상점 거래ID : ' + rsp.merchant_uid;
@@ -29,7 +29,7 @@
                 location.href = url;
             } 
             else {
-                var url = "http://127.0.0.1:8000/portfolio/payFail/";
+                var url = "https://pore-likelion.herokuapp.com/portfolio/payFail/";
                 var msg = '결제에 실패하였습니다. 에러내용 : ' + rsp.error_msg
                 location.href = url;
             }

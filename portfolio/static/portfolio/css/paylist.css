@@ -2,7 +2,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700&display=swap');
 
 body {
-    font-family: 'Nanum Gothic', sans-serif;
     text-align: center;
 }
 
@@ -23,3 +22,6 @@ table {
     border-bottom: 1px solid #444444;
     padding: 10px;
   }
+  footer {
+    position: absolute;
+} 

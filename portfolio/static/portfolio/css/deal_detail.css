@@ -1,14 +1,50 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap');
 
 body {
     text-align: center;
-    font-family: 'GongGothicMedium';
+}
+table {
+    margin: 0 auto;
+    width: 300px;
+    border-top: 1px solid #615d5d36;
+    border-collapse: collapse;
+    text-align: center;
+  }
+td {
+    border-bottom: 0.5px solid #615d5d36;;
+    padding: 10px;
+  }
+.info {
+    margin: 50px auto;
+    height: 250px;
+    max-width: 70%;
+}
+.gra {
+    float: left;
+    text-align: center;
+    width: 40%;
+}
+.gra2 {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+.text {
+    float: right;
+    text-align: left;
+    width: 60%;
 }
 
-.all {
+.grai {
+    width:150px;
+    height:150px;
+    border-radius: 50%;
+    border: 2px solid white;
+}
+/* .all {
    margin-left: 20%;
    position: relative;
-}
+} */
 
 .content img {
     max-width: 35vw;
@@ -21,18 +57,33 @@ body {
 } 
 
 .content {
-    width: 50%;
-    display: inline-block;
-    left: 200px;
-    right: 0;
-    word-break:break-all;
+    max-width: 70%;
+    text-align: center;
+    margin: auto;
 }
-
-.text {
-    width: 50%;
-    height: 250px;
-    float: right;
-    text-align: left;
+.bt {
+    width: 150px;
+    text-align: center;
+    justify-content: center;
+    margin: 5px auto;
+    color: white;
+    background-color: #d3d3d3;
+    border: 5px solid #d3d3d3;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.recent {
+    margin-bottom: 20px;
+}
+@media screen and (max-width: 768px) 
+{
+    .gra {
+        display: none;
+    }
+    .all {
+        max-width: 80%;
+    }
 }
 
 @media screen and (max-width: 768px), screen and (max-width : 1350px) 

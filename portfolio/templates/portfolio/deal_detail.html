@@ -5,56 +5,72 @@
 {% block content %}
 <link rel="stylesheet" type="text/css" href="/static/portfolio/css/deal_detail.css">
 <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
-<hr>
-<div class="all">
-<div class="content">
-    <p>{{deal.deal_content | safe}}</p>
+
+<div class="info">
+    <div class="gra">
+    {% if user.profile.profile_image %}
+        <img class="grai"  src="{{ user.profile.profile_image.url }}">
+        {% else %}
+        <img class="grai" src="{% static 'portfolio/img/기본프로필.jpg' %}">
+        {% endif %}
+        <br>
+        <div class="gra2">
+            <!-- 유저 등급 -->
+        {% if grade %}
+        <img src="{% static 'portfolio/img/two.png' %}" width="50px" hegiht="50px">
+        {% elif top %}
+        <img src="{% static 'portfolio/img/three.png' %}" width="50px" hegiht="50px">
+        {% else %}
+        <img src="{% static 'portfolio/img/one.png' %}" width="50px" hegiht="50px">
+        {% endif %}
+        <a href="{% url 'userpage' deal.u_id.id %}"> <h2><b>{{ deal.u_id }}</b></h2></a>
+        </div>
+        <h4>분야: {{ deal.field_id.field_name }}</h4>
 </div>
+<br>
 <div class="text">
-    <br>
     <h2>
     <!-- 입금된 것을 확인하고 예술가가 결제 상태 변경 -->
         {% if deal.status == "ready" %}
         [미결제]
         {% elif deal.status == "paid" %}
         [결제 확인]
-        {% endif %}{{deal.deal_title}}</h2>
+        {% endif %}
+        {{deal.deal_title}}</h2>
     <h1>{{ deal.price|intcomma }}원</h1>
-    <i class="far fa-clock" style="font-size: 25px;"></i><span> {{ deal.deal_date }}</span>
+    <i class="far fa-clock" style="font-size: 20px;"></i><span> {{ deal.deal_date }}</span>
+    <br>
+    {% if deal.u_id == user %}
+    <a href="{% url 'dealedit' deal.id %}" style="font-size: 15px;"><i class="far fa-edit"></i> 수정</a>&emsp;
+    <a href="{% url 'dealdelete' deal.id %}" style="font-size: 15px;"><i class="far fa-trash-alt"></i> 삭제</a>
+    {% else %}
+    <i class="fas fa-money-bill-wave" style="font-size: 30px;"></i>
+    <a href="{% url 'pay' deal.id %}" style="font-size: 30px;"> 결제</a>&emsp;
+    {% endif %}
+</div>
+</div>
+<hr>
+<div class="all">
+<div class="content">
+    <p>{{deal.deal_content | safe}}</p>
 </div>
 </div>
 
 <br>
-<div style=" text-align: center;">
-<!-- 본인 포트폴리오만 수정, 삭제 띄움 -->
-{% if deal.u_id == user %}
-<a href="{% url 'dealedit' deal.id %}" style="font-size: 30px;"> 수정</a>&emsp;
-<a href="{% url 'dealdelete' deal.id %}" style="font-size: 30px;"> 삭제</a>
-{% endif %}
-{% if deal.status == "ready" %}
-<i class="fas fa-money-bill-wave" style="font-size: 30px;"></i>
-<a href="{% url 'pay' deal.id %}" style="font-size: 30px;"> 결제</a>&emsp;
-{% endif %}
-</div>
 <hr>
-
-<div>
-    <!-- 유저 등급 -->
-    {% if grade %}
-    <img src="{% static 'portfolio/img/two.png' %}" width="50px" hegiht="50px">
-    {% elif top %}
-    <img src="{% static 'portfolio/img/three.png' %}" width="50px" hegiht="50px">
-    {% else %}
-    <img src="{% static 'portfolio/img/one.png' %}" width="50px" hegiht="50px">
-    {% endif %}
-
+<div class="recent">
     <h3>{{ deal.u_id.nickname }}님의 최근 거래글</h3>
-    <ul>
-        {% for ds in deals %}
-        <li><a href="{% url 'dealdetail' ds.id %}">{{ ds.deal_title }}</a></li>
-        {% endfor %}
-    </ul>
-    <p><a href="{% url 'userpage' deal.u_id.id %}">더보기</a></p>
+    <table>
+    {% for ds in deals %}
+    <tr>
+        <td><a href="{% url 'dealdetail' ds.id %}">{{ ds.deal_title }}</a></td>
+    </tr>
+    {% endfor %}
+    </table>
 </div>
+<div class="bt">
+    <a href="{% url 'userpage' deal.u_id.id %}">더보기</a>
+</div>
+<br>
 
 {% endblock %}

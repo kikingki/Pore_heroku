@@ -1,24 +1,35 @@
+@font-face {
+    font-family: 'GowunBatang-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunBatang-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
 body {
     background: #eee;
-    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-    font-size: 14px;
     color: #000;
-    margin: 0;
-    padding: 0;
+    height: 100%;
 }
 
 hr {
-    color: rgb(180, 173, 173);
-    border: 1px solid #ece0d9;
+    color: grey;
+    border: 0.5px solid;
 }
 
 .textbox-top {
+    min-height: 100%;
+    font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif';
+    font-size: 14px;
     background-color: #ece0d9;
     width: 80%;
     margin: 0 auto;
+    padding-bottom: 30px;
 }
 
 .textbox-bottom {
+    font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif';
+    font-size: 14px;
     width: 80%;
     margin: 0 auto;
     border: 3px solid #ece0d9;
@@ -27,6 +38,7 @@ hr {
 .comments {
     width: 80%;
     margin: 0 auto;
+    margin-bottom: 300px;
 }
 
 .com {
@@ -64,3 +76,8 @@ hr {
     border-color: #eee;
     color: #eee;
 }
+
+footer {
+    position: fixed;
+  }
+

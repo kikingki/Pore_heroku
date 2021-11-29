@@ -1,6 +1,9 @@
 body {
     text-align: center;
-    font-family: 'GongGothicMedium';
+    font-family: 'GowunBatang-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunBatang-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 
 hr {
@@ -74,3 +77,12 @@ hr {
     padding:10px;
     margin-top:11px;
 } 
+
+footer {
+    position: absolute;
+}
+
+.search {
+    margin-top: 10px;
+    margin-left: 30px;
+}

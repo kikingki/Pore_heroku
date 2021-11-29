@@ -3,23 +3,24 @@
 
 body {
     text-align: center;
-    font-family: 'Nanum Gothic', sans-serif;
 }
 
 .detail {
     margin: auto;
     width: 50vw;
     min-height: 90vh;
+    margin-bottom: 100px;
 }
 
 .detail p img {
-    max-width: 35vw;
-    height: 50vh;
+    /* max-width: 55vw; */
+    min-width: 50vw;
+    height: 60vh;
 }
 
 .detail iframe {
-    width: 35vw;
-    height: 50vh;
+    width: 50vw;
+    height: 60vh;
 }
 
 .banner {
@@ -59,3 +60,30 @@ body {
     }
     
  }
+ .bt {
+    width: 150px;
+    height: 34px;
+    text-align: center;
+    justify-content: center;
+    margin: 5px auto;
+    color: white;
+    background-color: #d3d3d3;
+    border: 5px solid #d3d3d3;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.recent {
+    margin-bottom: 20px;
+}
+table {
+    margin: 0 auto;
+    width: 300px;
+    border-top: 1px solid #615d5d36;
+    border-collapse: collapse;
+    text-align: center;
+  }
+td {
+    border-bottom: 0.5px solid #615d5d36;;
+    padding: 10px;
+  }
