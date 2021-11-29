@@ -1,12 +1,18 @@
 {% extends 'portfolio/base.html' %}
 
 {% load static %}
+
 {% block content %}
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
     <link rel="stylesheet" type="text/css" href="{% static 'community/css/community.css' %}">
+    <!-- 합쳐지고 최소화된 최신 CSS -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"> -->
 
     <title>커뮤니티</title>
 </head>
@@ -16,11 +22,6 @@
         <div style="width: 60%; margin-left: 20px; float: left;">
             <h1>{{ categorys }}</h1>
         </div>
-        <!--검색창-->
-        <form action="" method="GET">
-            <input type="text" name="q" value="{{ q }}"/>
-            <input type="submit" value="검색" />
-        </form>
 
         <div style="float: right; margin-right: 45px; margin-top: 10px;">
             <a href="{% url 'cmwrite' %}">
@@ -33,9 +34,9 @@
             <table style= "width : 80% " class="table">
                 <thead>
                     <tr>
-                        <td><a href="{% url 'cmdetail' c.id %}">{{ c.post_title|truncatechars:20 }}</a></td>
-                        <td>{{ c.user_id.nickname }}</td>
-                        <td>{{ c.post_date}}</td>                   
+                        <th style="text-align: center;">제목</th>
+                        <th style="text-align: center;">작성자</th>
+                        <th style="text-align: center;">날짜</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -65,9 +66,13 @@
                 <a href="?page={{ communitys.paginator.num_pages }}"><i class="fas fa-angle-double-right"></i></a>
             {% endif %}
         </div>
+         <!--검색창-->
+         <form action="" method="GET" class="sea">
+            <input type="text" name="q" value="{{ q }}"/>
+            <input type="submit" value="검색" />
+        </form>
     </div>
     <br><br><br>
     {% endblock %} 
 </body>
 </html>
->>>>>>> 9e391741721ef05bfc66b0f4c965ca8bae2c2610

@@ -1,4 +1,3 @@
-from typing import ContextManager
 from community.forms import CommunityForm
 from django.shortcuts import get_object_or_404, render, redirect
 from django.utils import timezone
@@ -6,9 +5,10 @@ from django.core.paginator import Paginator
 from .forms import CommunityForm, CmCommentForm
 from .models import Category, Community
 from django.http.response import HttpResponse
-from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.http import require_POST
+from typing import ContextManager
+from django.contrib import messages
 from django.db.models import Q
 import json
 
@@ -25,13 +25,6 @@ def community(request, com_id):
     # posts라는 객체를 따로 만들지 않고 communitys에 다시 대입해주면 됨.
     communitys = paginator.get_page(page)
     return render(request, 'community/community.html', {'communitys':communitys, 'categorys':categorys, 'q': q})
-
-# def search_list(request):
-#     qs = Community.objects.all()
-#     q = request.GET.get('q', '')
-#     if q:
-#         qs = qs.filter(Q(post_title__icontains = q) | Q(post_content__icontains = q))
-#     return render(request, 'community/community.html', {'search_list': qs, 'q':q})
 
 def cmwrite(request):
     if not request.user.is_active:

@@ -49,4 +49,19 @@
     <p>{{portfolio.pf_content | safe}}</p>
 </div>
 <hr>
+
+<div class="recent">
+<h3>{{ portfolio.user_id.nickname }}님의 최근 포트폴리오</h3>
+<table>
+  {% for ps in portfolios %}
+  <tr>
+      <td><a href="{% url 'pfdetail' ps.id %}">{{  ps.pf_title }}</a></td>
+  </tr>
+  {% endfor %}
+  </table>
+</div>
+<div class="bt">
+<p><a href="{% url 'userpage' portfolio.user_id.id %}">더보기</a></p>
+</div>
+<br>
 {% endblock %}

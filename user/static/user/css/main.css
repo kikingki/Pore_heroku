@@ -29,7 +29,7 @@ body {
     display: table;
     float: left;
     width: 400px; 
-    height: 300px;
+    height: 400px;
 }
 
 .slide_content > p{
@@ -42,7 +42,7 @@ body {
 
 .slide_content img {
     width: 400px; 
-    height: 300px;
+    height: 400px;
 }
 
 .slide01 {
