@@ -3,6 +3,7 @@ from django.db.models import fields
 from django.shortcuts import redirect, render, get_object_or_404
 from django.utils import timezone
 from django.core.paginator import Paginator
+from django.db.models import Q
 
 # 결제
 import requests
@@ -18,7 +19,7 @@ def pfshow(request, field_id):
     field = get_object_or_404(Field, pk=field_id)
     q = request.GET.get('q', '')
     if q:
-        portfolios = portfolios.filter(pf_title = q)
+        portfolios = portfolios.filter(Q(pf_title__icontains = q))
     return render(request, 'portfolio/pfshow.html', {'field': field,'portfolios': portfolios, 'q': q})
 
 def mypage(request):
