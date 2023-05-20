@@ -4,6 +4,12 @@
 
 [PO;RE 페이지 바로가기!](https://pore-likelion.herokuapp.com/)
 
+## ERD
+![PO;RE_20210719_33_34](https://github.com/kikingki/Pore_heroku/assets/63100425/f0d0c0f6-e591-4563-9035-429aebdccf46)
+
+## 플로우차트
+![플로우차트(최종)](https://github.com/kikingki/Pore_heroku/assets/63100425/5003c5a5-f3e0-4c7d-a099-d51c66d3cb84)
+
 ## 이 서비스를 기획하게 된 배경
 ![기능소개](https://user-images.githubusercontent.com/63100425/157116107-33907a5a-d832-4bca-b4bb-0e2f643aa0ae.png)
 
