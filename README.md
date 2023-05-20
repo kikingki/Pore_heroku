@@ -1,5 +1,4 @@
 # PO;RE
-![9th](https://likelion-badge.herokuapp.com/api/likelion_shield_badge)
 ✒제로부터 시작하는 나의 포트폴리오 기록, PO;RE
 
 [PO;RE 페이지 바로가기!](https://pore-likelion.herokuapp.com/)
